@@ -3,6 +3,19 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import Vuesax from 'vuesax'
+import 'vuesax/dist/vuesax.css' //Vuesax styles
+
+Vue.use(Vuesax, {
+  colors: {
+    primary:'#5b3cc4',
+    success:'rgb(23, 201, 100)',
+    danger:'rgb(242, 19, 93)',
+    warning:'rgb(255, 130, 0)',
+    dark:'rgb(0, 03, 09)'
+  }
+})
+
 
 Vue.config.productionTip = false
 

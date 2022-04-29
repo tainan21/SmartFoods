@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+     <MenuVue />
   </div>
 </template>
+
+<script>
+import MenuVue from '@/components/menu/MenuVue.vue'
+  export default {
+    name: 'MenuBobo',
+    components: {
+      'MenuVue': MenuVue
+    }
+  }
+ </script>
 
 <style lang="scss">
 #app {
@@ -17,6 +23,15 @@
   color: #2c3e50;
 }
 
+.menu{
+  display: flex;
+  align-items: center;
+  background-color: #666;
+  justify-content: center;
+  &_item{
+    margin: 0 10px;
+  }
+}
 nav {
   padding: 30px;
 

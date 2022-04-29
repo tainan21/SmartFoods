@@ -1,0 +1,124 @@
+--------------------------------------- |--TO DO--| ------------------------------------------------------------------------------------
+
+ - CADA PROJETO ESCALAR DE SUA MANEIRA
+
+Layout - {
+    PetShop,
+    Carros,
+    Comida,
+    Sobremesas,
+    Bebidas,
+    Tabacarias.        
+}
+Dados - {
+    Organizar objeto Produtos de uma entre 2 formas:
+    1 - Cada página ter seu objeto json,
+    2 - Um objeto json para todos onde, o id define qual escopo vai puxar,
+}
+Tabelas - {
+    - Gerar dados para uma api após a finalização de um cliente,
+    - Realizar Crud para alterar dados de produtos,
+    - Crud de estoque.
+}
+Vendas{
+
+}
+Organização do Projeto{
+    Melhorar arquitetura do projeto.
+}
+Gerais{
+    - Organizar TXT do whatsapp onde saia por ordem de categoria.
+}
+
+--------------------------------------- |--PROGRESS--| ---------------------------------------------------------------------------------
+Layout - {
+    Materiais e Construção,
+}
+Vendas{
+
+}
+
+--------------------------------------- |--D O N E --| ------------------------------------------------------------------------------------
+Layout - {
+    Comida,
+}
+Organização do Projeto{
+    Redesenhar arquitetura do projeto do zero.
+}
+  src/
+    |__ components  # Estrtutura especifica do projeto.
+       |__ Area   # a area do software ex: Financeiro, Operacional
+          |__ Modulo   # ex: Banco - todos os components referente a Banco
+              |__ FormBanco.vue   # nesse caso o component de formulario de cadastro do Banco
+              |__ ListBanco.vue   # nesse caso o component que lista os Banco
+    |__ assets   # assets do projeto
+    |__ commons   # Components Comuns a todos
+    |__ graphql # todas as querys do graphql
+    |__ helpers # bibliotecas de funções puras em js
+    |__ vuex # toda a estrutura do vuex0
+    |__ mixins # Mixins Vue usado no projeto
+
+
+
+src/
+ |__ Assets 
+ |   |__Styles ##Deixa essa parte com o pai
+ |      |__SCSS variables
+ |      |__SCSS Components
+ |      |__SCSS Templates
+ |      |__SASS
+ |         |__ Todos arquios que precisar que não são nem componentes, nem templates, nem variaveis, ex: AnimationLogoX.
+ |__ Componentes
+ |   |__ Area
+ |      |__ Modules
+ |         |__ FormBanco.vue :ex
+ |         |__ ListBanco.vue :ex
+ |__ Services
+ |__ Comons
+ |__ GraphQL
+ |__ HELPERS
+ |__ Mixins
+ |__ Regras
+
+
+Painel de Controle - DashBoard = OK
+Relatorio Resumido- RelatorioAll= ok
+Estatisticas - Estaticas = 
+
+Vendas{
+Lista de Vendas - ListVendas = OK
+Pedidos Manuais - PedidosManuais = OK
+Carrinhos abandonados - Carrinhos abandonados = no
+},
+
+Produtos{
+Lista de Produtos - (CRUD)ListProducts = ok
+Categorias - (CRUD)Categorias = ok
+Ingredientes - (CRUD) Ingredientes = ok
+},
+
+Clientes{
+Lista de Clientes = (CRUD) ListClientes = ok
+Contatos = Contatos = ok
+},
+
+Marketing{
+Cupons = (Crud) ListCupons = ok
+Promoções = (Crud) Promoções = ok
+Cupons = Outras ferramentas = ok
+}
+
+Paginas{
+Landing = Landing = ok
+Faça-seu-pedido = Faça seu pedido = ok
+Carrinho = Carrinho = ok
+Login = Login = ok
+}
+
+Relatórios{
+ Gráficos = graficos = no
+}
+
+Clientes{
+Disparados para clientes
+}
