@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import server from '../server/index'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    pedido: '',
+    pedido: ''
   },
   getters: {
     GetPedido: state => {
@@ -17,9 +18,16 @@ export default new Vuex.Store({
       state.pedido = payload      
     },
   },
-  actions: {
-    ActionSetPedido (context, payload){
+  actions: 
+  {
+    ActionSetPedido (context, payload)
+    {
       context.commit('SET_PEDIDO', payload)
+    },
+  
+    ActionGetListRequest ()
+    {     
+      return server.getListRequest()
     },
   },
   modules: {

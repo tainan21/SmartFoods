@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+<div class="about">
     <h1>This is an about page</h1>
     <input type="text" v-model="first">
     <input type="button" value="set Pedido" @click="setPedido">
@@ -7,36 +7,40 @@
 
     <button type="button" class="btn btn-primary">Primary</button>
 
-  </div>
+</div>
 </template>
 
 <script>
-import { mapActions,mapGetters } from "vuex";
+import {
+    mapActions,
+    mapGetters
+} from "vuex";
 export default {
-    data(){
-      return{
-        first: '',
-        secund: '',
-      }
+    data() {
+        return {
+            first: '',
+            secund: '',
+        }
     },
     methods: {
-      ...mapGetters(["GetPedido"]),
-      ...mapActions(["ActionSetPedido"]),
-    
-      setPedido(){
-        //localStorage.setItem('primeiro', this.first)
-        sessionStorage.first = this.first
-        //this.ActionSetPedido(this.first)
-      },
-      getPedido(){
-        console.log(sessionStorage.first)
-        //console.log(this.GetPedido())
-        
-      }
+        ...mapGetters(["GetPedido"]),
+        ...mapActions(["ActionSetPedido", "ActionGetListRequest"]),
+
+        setPedido() {
+            
+            sessionStorage.first = this.first
+           
+        },
+        async getPedido() {
+            await this.ActionGetListRequest().then((response) => {
+                console.log(response)
+            })
+            
+        }
 
     },
-    mounted(){
-      //this.getPedido()
+    mounted() {
+        //this.getPedido()
     }
 }
 </script>

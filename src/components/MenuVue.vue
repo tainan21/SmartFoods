@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div >
     <router-view/>
-    <div class="hidden">
-      <vs-navbar shadow square center-collapsed v-model="active">
+    <div class="hidden " >
+      <vs-navbar    shadow square center-collapsed v-model="active">
         <template #left>
           <vs-button @click="activeSidebar = !activeSidebar" flat icon>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(6, 0, 0, 1);transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>          </vs-button>
         </template>
-        <vs-navbar-item :active="active == 'guide'" id="guide">
-           <router-link to="/">Home</router-link> |
+        <vs-navbar-item  :active="active == 'guide'" id="guide">
+           <router-link style="border-top: 40px solid" to="/">Home</router-link> |
         </vs-navbar-item>
         <vs-navbar-item :active="active == 'docs'" id="docs">
           <router-link to="/about">About</router-link> |
@@ -84,7 +84,7 @@
         <template #footer>
           <vs-row justify="space-between">
             <vs-avatar>
-              <img src="/avatars/avatar-5.png" alt="">
+              
             </vs-avatar>
             <vs-avatar badge-color="danger" badge-position="top-right">
               <i class='bx bx-bell' ></i>
