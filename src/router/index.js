@@ -24,6 +24,11 @@ const routes = [
     component: () => import('../views/CarShop.vue')
   },  
   {
+    path: '/ProdutoDetalhes',
+    name: 'Produtos',
+    component: () => import('../pages/ProdutoDetalhes.vue')
+  },  
+  {
     path: '/TesteMax',
     name: 'testeMax',
     component: () => import('../pages/TesteMax.vue')
@@ -32,6 +37,11 @@ const routes = [
     path: '/ClientesList',
     name: 'Clientes',
     component: () => import('../pages/ClientesList.vue')
+  },  
+  {
+    path: '/MenuBottom',
+    name: 'MenuBottom',
+    component: () => import('../components/menu/MenuBottom.vue')
   },  
   {
     path: '/faça-seu-pedido',

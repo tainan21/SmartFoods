@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-     <MenuVue />
+  <div>
+      <MenuVue />
+      <div id="app"></div>
   </div>
 </template>
 
 <script>
-import MenuVue from '@/components/menu/MenuVue.vue'
+//import MenuVue from '@/components/menu/MenuVue.vue'
+import MenuVue from '@/components/MenuVue.vue'
   export default {
     name: 'MenuBobo',
     components: {
