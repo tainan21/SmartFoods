@@ -129,7 +129,7 @@
     }
 }
 .Banner{
-  background-color: rgb(36, 33, 69);
+    background: var(--bg-color);
   width: 100%;
   height: 150px;
   display: flex;

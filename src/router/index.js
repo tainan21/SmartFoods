@@ -22,7 +22,17 @@ const routes = [
     path: '/CarShop',
     name: 'carshop',
     component: () => import('../views/CarShop.vue')
-  },  
+  },
+  {
+    path: '/CrudProdutos',
+    name: 'CrudProdutos',
+    component: () => import('../views/CrudProdutos.vue')
+  },
+  {
+    path: '/ListPedidos',
+    name: 'ListPedidos',
+    component: () => import('../views/ListPedidos.vue')
+  },
   {
     path: '/ProdutoDetalhes',
     name: 'Produtos',

@@ -45,7 +45,7 @@
         &_Button{
             display: flex;
             align-items: center;
-            background: #000;
+    background: var(--bg-color);
             justify-content:space-between;
             color: white;
         }
