@@ -1,19 +1,6 @@
 <template>
      <div class="MenuTest">
           <router-view/>
-          <div class="TopBar">
-               <div class="TopBar_Menu">
-                    <router-link class="TopBar_Menu-item" to="/">Home</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/about">About</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/faça-seu-pedido">Pedidos</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/ClientesList">Clientes</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/ProdutoDetalhes">ProdutoC</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/CrudProdutos">CrudProdutos</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/ListPedidos">ListPedidos</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/CarShop">Carshop</router-link> |
-                    <router-link class="TopBar_Menu-item" to="/MenuBottom">MenuBottom</router-link> |
-               </div>
-          </div>
           <div class="sidebar" :class="isOpened ? 'open' : ''" :style="cssVars">
                <div class="logo-details" style="margin: 6px 14px 0 14px;">
                     <img v-if="menuLogo" :src="menuLogo" alt="menu-logo" class="menu-logo icon">
@@ -31,10 +18,10 @@
                          </li>
                          <span v-for="(menuItem, index) in menuItems" :key="index">
                          <li>
-                              <a :href="menuItem.link">
+                              <router-link :to="menuItem.link">
                                    <i class="bx" :class="menuItem.icon || 'bx-square-rounded'"/>
                                    <span class="links_name">{{ menuItem.name }}</span>
-                              </a>
+                              </router-link> 
                               <span class="tooltip">{{ menuItem.tooltip || menuItem.name }}</span>
                               </li>
                          </span>
@@ -95,56 +82,68 @@
         type: Array,
         default: () => [
           {
-            path: '/ClientesList',
+            path: '/',
             name: 'Dashboard',
             tooltip: 'Dashboard',
             icon: 'bx-beer',
           },
           {
-            to: '/ClientesList',
+            to: '/about',
             name: 'User',
             tooltip: 'User',
             icon: 'bx-user',
           },
           {
-            link: '#',
-            name: 'Messages',
+            link: '/',
+            name: 'DashBoard',
+            tooltip: 'Messages',
+            icon: 'bx-pie-chart-alt-2',
+          },
+          {
+            link: '/about',
+            name: 'About',
+            tooltip: 'Analytics',
+            icon: 'bx-pie-chart-alt-2',
+          },
+               {
+            link: '/ClientesList',
+            name: 'Lista de Clientes',
             tooltip: 'Messages',
             icon: 'bx-chat',
           },
           {
-            link: '#',
-            name: 'Analytics',
+            link: '/ListPedidos',
+            name: 'Lista de Pedidos',
             tooltip: 'Analytics',
             icon: 'bx-pie-chart-alt-2',
           },
           {
-            link: '#',
-            name: 'File Manager',
+            link: '/CrudProdutos',
+            name: 'CrudProdutos',
             tooltip: 'Files',
             icon: 'bx-folder',
           },
           {
-            link: '#',
-            name: 'Order',
+            link: '/ProdutoDetalhes',
+            name: 'ProdutoDetalhes',
             tooltip: 'Order',
             icon: 'bx-cart-alt',
           },
           {
-            link: '#',
-            name: 'Saved',
+            link: '/faça-seu-pedido',
+            name: 'Faça seu Pedido',
             tooltip: 'Saved',
             icon: 'bx-heart',
           },
           {
-            link: '#',
-            name: 'Setting',
+            link: '/CarShop',
+            name: 'CarShop',
             tooltip: 'Setting',
             icon: 'bx-cog',
           },
           {
-            link: '#',
-            name: 'Setting',
+            link: '/MenuBottom',
+            name: 'MenuBottom',
             tooltip: 'Setting',
             icon: 'bx-cog',
           },
@@ -236,7 +235,8 @@
       }
     },
     mounted() {
-      this.isOpened = this.isMenuOpen
+      this.isOpened = this.isMenuOpen,
+      console.log('teste aq', this.menuItems);
     },
     computed: {
       cssVars() {

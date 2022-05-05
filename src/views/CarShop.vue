@@ -1,63 +1,107 @@
 
 <template>
-     <div class="container">
-          <div class="center content-inputs form">
-               <vs-input class="form__input" primary v-model="value" placeholder="Primary" />
-               <vs-input class="form__input" success v-model="value2" placeholder="Success" />
-               <vs-input class="form__input" danger v-model="value3" placeholder="Danger" />
-               <vs-input class="form__input" warn v-model="value4" placeholder="Warn" />
-               <vs-input class="form__input" dark v-model="value5" placeholder="Dark" />
-               <vs-input class="form__input" color="#7d33ff" v-model="value6" placeholder="HEX" />
-               <vs-input class="form__input" color="rgb(59,222,200)" v-model="value7" placeholder="HEX" />
+<div class="CarShopBg">
+     <div class="container form">
+          <div class="row">
+               <div class="col-lg-8 col-12">
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="center content-inputs">
+                                   <vs-input color="#7d33ff" border type="name" v-model="Nome" placeholder="Primeiro nome">
+                                        <template #icon>
+                                             <i class='bx bx-user'></i>
+                                        </template>
+                                   </vs-input>
+                              </div>
+                         </div>
+                          <div class="col-8">
+                              <div class="center content-inputs">
+                                   <vs-input color="#7d33ff" border type="name" v-model="Endereco" placeholder="Endereço">
+                                        <template #icon>
+                                             <i class='bx bx-user'></i>
+                                        </template>
+                                   </vs-input>
+                              </div>
+                         </div>
+                          <div class="col-4">
+                              <div class="center content-inputs">
+                                   <vs-input color="#7d33ff" border type="name" v-model="Num" placeholder="Número">
+                                        <template #icon>
+                                             <i class='bx bx-user'></i>
+                                        </template>
+                                   </vs-input>
+                              </div>
+                         </div>
+                         <div class="col-8">
+                              <div class="center content-inputs">
+                                   <vs-input color="#7d33ff" border type="name" v-model="Cidade" placeholder="Cidade">
+                                        <template #icon>
+                                             <i class='bx bx-user'></i>
+                                        </template>
+                                   </vs-input>
+                              </div>
+                         </div>
+                         <div class="col-4">
+                              <div class="center content-inputs">
+                                   <vs-select label="Group Filter" filter placeholder="Filter" v-model="bairro">
+                                        <vs-option-group>
+                                             <div slot="title">Pereiras</div>
+                                             <vs-option label="Vuesax" value="1">Vuesax</vs-option>
+                                             <vs-option label="Vue" value="2">Vue</vs-option>
+                                             <vs-option label="Javascript" value="3">Javascript</vs-option>
+                                        </vs-option-group>
+                                        <vs-option-group>
+                                             <div slot="title">Conchas</div>
+                                             <vs-option label="Sass" value="4">Sass</vs-option>
+                                             <vs-option label="Typescript" value="5">Typescript</vs-option>
+                                             <vs-option label="Webpack" value="6">Webpack</vs-option>
+                                             <vs-option label="Nodejs" value="7">Nodejs</vs-option>
+                                        </vs-option-group>
+                                        <vs-option-group>
+                                             <div slot="title">Laranjal</div>
+                                             <vs-option label="Sass" value="4">Sass</vs-option>
+                                             <vs-option label="Typescript" value="5">Typescript</vs-option>
+                                             <vs-option label="Webpack" value="6">Webpack</vs-option>
+                                             <vs-option label="Nodejs" value="7">Nodejs</vs-option>
+                                        </vs-option-group>
+                                   </vs-select>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-lg-4 col-12">
+               </div>
           </div>
-          <div class="center content-inputs">
-               <vs-input border v-model="value" placeholder="Name" />
-               <vs-input color="#7d33ff" border type="password" v-model="value2" placeholder="Password">
-                    <template #icon>
-                         <i class='bx bx-lock-open-alt'></i>
-                    </template>
-               </vs-input>
-                    <vs-input border warn type="email" icon-after v-model="value3" label-placeholder="Address">
-                         <template #icon>
-                              <i class='bx bxl-bitcoin'></i>
-                         </template>
-                    </vs-input>
-               </div>
-               <template>
-                    <div class="center content-inputs">
-                    <vs-input shadow v-model="value" placeholder="Name" />
-                    <vs-input color="#7d33ff" shadow type="password" v-model="value2" placeholder="Password">
-                         <template #icon>
-                              <i class='bx bx-lock-open-alt'></i>
-                         </template>
-                    </vs-input>
-                    <vs-input shadow warn type="email" icon-after v-model="value3" label-placeholder="Address">
-                         <template #icon>
-                              <i class='bx bxl-bitcoin'></i>
-                         </template>
-                    </vs-input>
-               </div>
-          </template>
      </div>
+</div>
 </template>
 
 <script>
 export default {
      data:() => ({
-          value: '',
-          value2: '',
-          value3: '',
-          value4: '',
-          value5: '',
-          value6: '',
-          value7: ''
+          nome: '',
+          Endereco: '',
+          Num: '',
+          Cidade: '',
+          Bairro: ['4'],
           })
      }
 </script>
    
    
 <style lang="scss" scoped>
+.vs-input {
+     width: 100% !important;
+}
+.vs-input-parent--border .vs-input-content .vs-input{
+     width: 100% !important;
+}
+.CarShopBg{
+     background-color: #f4f7f8;
+     margin-top: 10%;
+}
      .form{
+          background: #ffffff;
                &__input{
                     color: white;
                }

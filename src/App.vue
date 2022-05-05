@@ -1,5 +1,22 @@
 <template>
   <div>
+    <ComponentePrincipal />
+  </div>
+</template>
+
+<script>
+//import MenuVue from '@/components/menu/MenuVue.vue'
+import ComponentePrincipal from '@/ComponentePrincipal.vue'
+  export default {
+    components: {
+      'ComponentePrincipal': ComponentePrincipal
+    },
+  }
+  
+ </script>
+
+<!--<template>
+  <div>
       <MenuVue />
       <div id="app"></div>
   </div>
@@ -12,23 +29,6 @@ import MenuVue from '@/components/menu/MenuVue.vue'
     components: {
       'MenuVue': MenuVue
     },
-    computed: {
-        cssVars() {
-          return {
-            // '--padding-left-body': this.isOpened ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody,
-            '--bg-color': this.bgColor,
-            '--secondary-color': this.secondaryColor,
-            '--home-section-color': this.homeSectionColor,
-            '--logo-title-color': this.logoTitleColor,
-            '--icons-color': this.iconsColor,
-            '--items-tooltip-color': this.itemsTooltipColor,
-            '--serach-input-text-color': this.searchInputTextColor,
-            '--menu-items-hover-color': this.menuItemsHoverColor,
-            '--menu-items-text-color': this.menuItemsTextColor,
-            '--menu-footer-text-color': this.menuFooterTextColor,
-          }
-        }
-    }
   }
   
  </script>
@@ -36,3 +36,4 @@ import MenuVue from '@/components/menu/MenuVue.vue'
 <style lang="scss">
 
 </style>
+-->

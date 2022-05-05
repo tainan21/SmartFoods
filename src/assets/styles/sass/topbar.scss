@@ -1,0 +1,22 @@
+.TopBar{
+    background-color: #11101d;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 10%;
+     width: 100%;
+     position: fixed;
+     top: 0px;
+     padding: 10px 60px 10px 60px;
+     &_Menu{
+       &-item{
+        color: #fff;
+        &:hover{
+          border-bottom: 1px solid black;
+        }
+        &:active{
+          border-bottom: 1px solid black;
+        }
+       }
+     }
+}

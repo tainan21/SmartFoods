@@ -1,6 +1,6 @@
 
 <template>
-    <div class="center">
+    <div class="center container">
       <vs-table
         v-model="selected"
         >

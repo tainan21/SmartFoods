@@ -13,6 +13,7 @@ Vue.use(Vuesax, {
     success:'rgb(54, 86, 92)',
     danger:'rgb(242, 19, 93)',
     warning:'rgb(255, 130, 0)',
+    black:'rgb(0, 0, 0)',
     dark:'rgb(0, 03, 09)'
   }
 })

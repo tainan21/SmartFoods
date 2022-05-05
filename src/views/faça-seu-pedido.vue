@@ -1,6 +1,8 @@
 <template>
      <div class="ContainerWrapper">
-          <div class="Banner">Começa aqui</div>
+          <div class="container">
+               <div class="Banner"></div>
+          </div>
           <div class="container">
                <div class="Info">
                     <div class="Info_Desc">Endereço X</div>
@@ -36,7 +38,8 @@
                               </div>
                          </div>
                     </div>
-               </div>     
+               </div>    
+             
                <div class="Products_Box">
                     <p class="Products_Box-Title">Lanches Tradicionais</p>
                </div>
@@ -48,6 +51,26 @@
                     </div>
                     <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right" width="80" height="80">
                </a>
+               <vs-card type="2">
+                    <template #title>
+                         <p class="Products_Box-Title">Lanches Tradicionais</p>
+                    </template>
+                    <template #img>
+                         <img src="@/assets/product/1.jpg"  alt="">
+                    </template>
+                    <template #text>
+                         <p class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso</p>
+                    </template>
+                    <template #interactions>
+                         <vs-button danger icon><i class='bx bx-heart'></i></vs-button>
+                         <vs-button class="btn-chat" shadow primary>
+                              <i class='bx bx-chat' ></i>
+                                   <span class="span">
+                                        54
+                                   </span>
+                         </vs-button>
+                    </template>
+               </vs-card> 
           </div>
      </div>
 </template>
@@ -82,7 +105,7 @@
   </script>
 <style lang="scss">
 .ContainerWrapper{
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .Filter{
     background-color: #f3f5f7;
@@ -129,13 +152,17 @@
     }
 }
 .Banner{
-    background: var(--bg-color);
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+     background-attachment: fixed;
+     background-clip: content-box;
+     background-size: auto;
+     background-image: url('@/assets/banner1.png');  
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
 }
 .Info{
   background-color: #666;

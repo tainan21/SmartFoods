@@ -11,28 +11,7 @@
  body {
    transition: all 0.5s ease;
  }
- .TopBar{
-     background-color: #11101d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 10%;
-      width: 100%;
-      position: fixed;
-      top: 0px;
-      padding: 10px 60px 10px 60px;
-      &_Menu{
-        &-item{
-         color: #fff;
-         &:hover{
-           border-bottom: 1px solid black;
-         }
-         &:active{
-           border-bottom: 1px solid black;
-         }
-        }
-      }
- }
+
  .menu-logo {
    width: 30px;
    margin: 0 10px 0 10px;
@@ -332,6 +311,14 @@
   }
 }
   @media (max-width: 900px) {
+    .sidebar div.profile {
+      position: relative;
+      height: 60px;
+      width: 0px;
+      left: 0;
+      bottom: 0; 
+      padding: 0
+    }
     .sidebar.open {
      width: 100%;
    }
