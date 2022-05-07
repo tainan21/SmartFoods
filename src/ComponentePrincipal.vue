@@ -1,11 +1,8 @@
 <template>
   <div>
-        <div class="menuu topbar">
           <MenuVue />
-        </div>
-         <div class="container">
-              <div id="app"></div>  
-        </div>       
+          <router-view/>
+     
   </div>
 </template>
 

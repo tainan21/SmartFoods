@@ -1,5 +1,5 @@
 <template>
-<div class="about">
+<div class="container">
     <h1>This is an about page</h1>
     <input type="text" v-model="first">
     <input type="button" value="set Pedido" @click="setPedido">

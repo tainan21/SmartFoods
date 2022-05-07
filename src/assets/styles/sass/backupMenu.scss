@@ -21,19 +21,10 @@
    font-size: 12px !important;
  }
 
-
- //#my-scroll{
-  //margin: 6px 14px 0 14px;
- //}
  .menu-logo {
    width: 30px;
    margin: 0 10px 0 10px;
  }
- .sidebar.open .logo-details .icon,
- .sidebar.open .logo-details .logo_name {
-   opacity: 1;
- }
-
  .sidebar {
    position: relative;
    display: flex;
@@ -44,87 +35,16 @@
    height: 100%;
    min-height: min-content;
    /* overflow-y: auto; */
-   width: 50px;
+   width: 78px;
    background: var(--bg-color);
    /* padding: 6px 14px 0 14px; */
    z-index: 99;
    transition: all 0.5s ease;
-    
-    &.open {
-      width: 250px;
-    } 
-
-    & .bx-search {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      font-size: 22px;
-      background: var(--secondary-color);
-      color: var(--icons-color);
-    }
-    & i {
-      color: var(--icons-color);
-      height: 60px;
-      min-width: 50px;
-      font-size: 28px;
-      text-align: center;
-      line-height: 60px;
-    }
-    & li {
-      position: relative;
-      margin: 8px 0;
-      list-style: none;
-    }
-    & input {
-      font-size: 15px;
-      color: var(--serach-input-text-color);
-      font-weight: 400;
-      outline: none;
-      height: 50px;
-      width: 100%;
-      width: 50px;
-      border: none;
-      border-radius: 12px;
-      transition: all 0.5s ease;
-      background: var(--secondary-color);
-    }
-    & .logo-details {
-      height: 60px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      & .icon {
-        opacity: 0;
-        transition: all 0.5s ease;
-      }
-      & .logo_name {
-        color: var(--logo-title-color);
-        font-size: 20px;
-        font-weight: 600;
-        opacity: 0;
-        transition: all 0.5s ease;
-      }
-      & #btn {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        font-size: 22px;
-        transition: all 0.4s ease;
-        font-size: 23px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.5s ease;
-      }
-    }
-    & .nav-list {
-      margin-top: 20px;
-      /* margin-bottom: 60px; */
-      /* height: 100%; */
-      /* min-height: min-content; */
-    }  
+  
   }
+ .sidebar.open {
+  width: 250px;
+}
 
 .bx-menu{
   transition: all 0.5s ease;
@@ -133,9 +53,61 @@
      right: 8px;
    }
  }
+ .sidebar .logo-details {
+   height: 60px;
+   display: flex;
+   align-items: center;
+   position: relative;
+ }
+ .sidebar .logo-details .icon {
+   opacity: 0;
+   transition: all 0.5s ease;
+ }
+ .sidebar .logo-details .logo_name {
+   color: var(--logo-title-color);
+   font-size: 20px;
+   font-weight: 600;
+   opacity: 0;
+   transition: all 0.5s ease;
+ }
+ .sidebar.open .logo-details .icon,
+ .sidebar.open .logo-details .logo_name {
+   opacity: 1;
+ }
+ .sidebar .logo-details #btn {
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translateY(-50%);
+   font-size: 22px;
+   transition: all 0.4s ease;
+   font-size: 23px;
+   text-align: center;
+   cursor: pointer;
+   transition: all 0.5s ease;
+ }
  .sidebar.open .logo-details #btn {
    text-align: right;
- } 
+ }
+ .sidebar i {
+   color: var(--icons-color);
+   height: 60px;
+   min-width: 50px;
+   font-size: 28px;
+   text-align: center;
+   line-height: 60px;
+ }
+ .sidebar .nav-list {
+   margin-top: 20px;
+   /* margin-bottom: 60px; */
+   /* height: 100%; */
+   /* min-height: min-content; */
+ }
+ .sidebar li {
+   position: relative;
+   margin: 8px 0;
+   list-style: none;
+ }
  .sidebar li .tooltip {
    position: absolute;
    top: -20px;
@@ -162,9 +134,31 @@
  .sidebar.open li .tooltip {
    display: none;
  }
+ .sidebar input {
+   font-size: 15px;
+   color: var(--serach-input-text-color);
+   font-weight: 400;
+   outline: none;
+   height: 50px;
+   width: 100%;
+   width: 50px;
+   border: none;
+   border-radius: 12px;
+   transition: all 0.5s ease;
+   background: var(--secondary-color);
+ }
  .sidebar.open input {
    padding: 0 20px 0 50px;
    width: 100%;
+ }
+ .sidebar .bx-search {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   font-size: 22px;
+   background: var(--secondary-color);
+   color: var(--icons-color);
  }
  .sidebar.open .bx-search:hover {
    background: var(--secondary-color);
@@ -214,7 +208,7 @@
  .sidebar div.profile {
    position: relative;
    height: 60px;
-   width: 50px;
+   width: 78px;
    /* left: 0;
    bottom: 0; */
    padding: 10px 14px;

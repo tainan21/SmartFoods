@@ -10,38 +10,31 @@
                </div>
                <div class="Filter">
                     <div class="row">
-                         <div class="col-10 mt-2 mb-2">
+                         <div class="col-12 mt-2 mb-2">
                               <div class="row no-gutters">
-                                   <div class="col Filter_Buttons-Item  ">
-                                        <vs-button :active="active == 0" @click="active = 0" class="m-auto"><i class="bx bx-home-alt"></i> Lanches </vs-button>
-                                        <vs-button :active="active == 0" @click="active = 0" class="m-auto"><i class="bx bx-home-alt"></i> Tradicionais </vs-button>
-                                   </div>
-                                   <div class="col Filter_Buttons-Item">
-                                        <vs-button :active="active == 0" @click="active = 0" class="m-auto"><i class="bx bx-home-alt"></i> Bebidas </vs-button>
-                                        <vs-button :active="active == 0" @click="active = 0" class="m-auto"><i class="bx bx-home-alt"></i> Sobremesas </vs-button>
-                                   </div>
-                                   <div class="col Filter_Buttons-Item">
-                                        <vs-button :active="active == 0" @click="active = 0" class="m-auto"><i class="fa-solid fa-burger"></i> Todos </vs-button>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="col-2">
-                              <div class="row">
-                                   <div class="col Filter_Buttons-Item">
-                                        <vs-button :animate-inactive="successFace" @click="handleClickFace" :loading="loadingFace" color="facebook">
-                                             <i class='bx ' ></i> {{ successFace ? 'Layout 2' : 'Layout 1' }}
-                                             <template #animate >
-                                                  <i class='bx bx-user' ></i> Alterar
-                                             </template>
-                                        </vs-button>
+                                   <div class="Filters">
+                                        <div class="Filters_wrapper">     
+                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item"><i class="bx bx-home-alt "></i> Lanches </vs-button>
+                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item"><i class="bx bx-home-alt "></i> Lanches  </vs-button>
+                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item"><i class="bx bx-home-alt "></i> Bebidas </vs-button>
+                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item"><i class="bx bx-home-alt "></i> Sobremesas </vs-button>
+                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item"><i class="fa-solid fa-burger "></i> Todos </vs-button>
+                                        </div>
                                    </div>
                               </div>
                          </div>
                     </div>
-               </div>    
-             
+               </div>
                <div class="Products_Box">
-                    <p class="Products_Box-Title">Lanches Tradicionais</p>
+                         <p class="Products_Box-Title ">Lanches Tradicionais</p>
+                         <div class="Products_Box-Grid align-content-end align-items-end justify-content-end">
+                              <vs-button :animate-inactive="successFace" @click="handleClickFace" :loading="loadingFace" color="facebook">
+                                   <i class='bx ' ></i> {{ successFace ? 'Layout 2' : 'Layout 1' }}
+                                   <template #animate >
+                                        <i class='bx bx-user' ></i> Alterar
+                                   </template>
+                              </vs-button>
+                         </div>
                </div>
                <a class="Products" to="/ProdutoDetalhes">
                     <div class="Products_Text">
@@ -51,6 +44,7 @@
                     </div>
                     <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right" width="80" height="80">
                </a>
+                <!--
                <vs-card type="2">
                     <template #title>
                          <p class="Products_Box-Title">Lanches Tradicionais</p>
@@ -61,6 +55,7 @@
                     <template #text>
                          <p class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso</p>
                     </template>
+                   
                     <template #interactions>
                          <vs-button danger icon><i class='bx bx-heart'></i></vs-button>
                          <vs-button class="btn-chat" shadow primary>
@@ -70,7 +65,7 @@
                                    </span>
                          </vs-button>
                     </template>
-               </vs-card> 
+               </vs-card>  -->
           </div>
      </div>
 </template>
@@ -107,6 +102,33 @@
 .ContainerWrapper{
   margin-top: 20px;
 }
+.Filters{
+     position: relative;
+     width: 100%;
+     height: 72px;
+     margin: 8px 0px 0px;
+     overflow: scroll hidden;
+     border-top: 1px solid rgb(232, 234, 237);
+     display: flex;
+     flex-direction: row;
+     -webkit-box-pack: initial;
+     justify-content: initial;
+     -webkit-box-align: center;
+     align-items: center;
+     white-space: nowrap;
+     background-color: rgb(255, 255, 255);
+     &_wrapper{
+          padding-right: 22px;
+          margin-left: 14px;
+          display: flex;
+          &-item{
+               font-weight: 500;
+               color: rgb(255, 255, 255);
+               margin: 0 10px;
+               height: 30px;
+          }
+     }
+}
 .Filter{
     background-color: #f3f5f7;
     &_Buttons{
@@ -131,9 +153,17 @@
     padding: 0;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    width: 100%;
     &-Title{
       padding: 12px;
       margin: 0;
+      width: 100%;
+    }
+     &-Grid{
+          position: relative;
+          display: flex;
+          width:100%;
     }
   }
     &_Text{
@@ -152,11 +182,12 @@
     }
 }
 .Banner{
-     background-attachment: fixed;
-     background-clip: content-box;
-     background-size: auto;
-     background-image: url('@/assets/banner1.png');  
-     background-repeat: no-repeat;
+     //background-attachment: fixed;
+     //background-clip: content-box;
+     //background-size: auto;
+     //background-image: url('@/assets/banner1.png');  
+     //background-repeat: no-repeat;
+     background-color: #000;
      width: 100%;
      height: 300px;
      display: flex;
