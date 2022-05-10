@@ -1,167 +1,144 @@
+
 <template>
-    <div>
-        <div id="burger-table">
-            <div>
-                <div id="burger-table-heading">
-                    <div class="order-id">N°:</div>
-                    <div>Cliente:</div>
-                    <div>Lanche:</div>
-                    <div>Endereço:</div>
-                    <div>Endereço:</div>
-                    <div>Opcionais:</div>
-                    <div>Ações:</div>
+    <div class="center">
+      <vs-table v-model="selected">
+        <template #header> <vs-input v-model="search" border placeholder="Search" /></template>
+        <template #thead>
+          <vs-tr>
+            <vs-th>
+              <vs-checkbox :indeterminate="selected.length == users.length" v-model="allCheck" @change="selected = $vs.checkAll(selected, users)"/>
+            </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'code')"> code </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'name')"> nome </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'description')">Descrição </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'category')">Categoria </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'price')"> preço </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'quantity')">quantidade </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'sales')">Vendidos</vs-th>
+          </vs-tr>
+        </template>
+        <template #tbody>
+          <vs-tr :key="i" v-for="(tr, i) in $vs.getPage($vs.getSearch(users, search), page, max)" :data="tr" :is-selected="!!selected.includes(tr)" not-click-selected open-expand-only-td>
+            <vs-td checkbox>
+              <vs-checkbox :val="tr" v-model="selected" />
+            </vs-td>
+            <vs-td> {{ tr.code }}</vs-td>
+            <vs-td edit @click="edit = tr, editProp = 'name', editActive = true">{{ tr.name }}</vs-td>
+            <vs-td>{{ tr.description }}</vs-td>
+            <vs-td>{{ tr.category }}</vs-td>
+            <vs-td>{{ tr.price }}</vs-td>
+            <vs-td>{{ tr.quantity }}</vs-td>
+            <vs-td>{{ tr.sales }}</vs-td>
+            <template #expand>
+              <div class="con-content">
+                <div>
+                  <vs-avatar>
+                    <img :src="`/avatars/avatar-${i + 1}.png`" alt="">
+                  </vs-avatar>
+                  <p>{{ tr.name }}</p>
                 </div>
-            </div>
-            <div id="burger-table-rows">
-                <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
-                    <div class="order-number">{{burger.id}}</div>
-                    <div>{{burger.nome}}</div>
-                    <div>{{burger.lanche}}</div>
-                    <div>{{burger.endereco}}</div>
-                    <div>
-                        <ul>
-                            <li v-for="(opcional,index) in burger.opcionais" :key="index">{{opcional}}</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <select name="status" class="status" @change="updateBurger($event,burger.id)">
-                            <option value="">Selecione</option>
-                            <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">{{s.tipo}}</option>
-                        </select>
-                        <button class="delete-btn" @click="deleteBurger(burger.id)">Cancelar</button>
-                    </div>
+                <div>
+                  <vs-button flat icon>
+                    <i class='bx bx-lock-open-alt' ></i>
+                  </vs-button>
+                  <vs-button flat icon>Editar Produto</vs-button>
+                  <vs-button border danger>Remover Produto</vs-button>
                 </div>
-            </div>
-        </div>
+              </div>
+            </template>
+          </vs-tr>
+        </template>
+        <template #footer>
+          <vs-pagination v-model="page" :length="$vs.getLength($vs.getSearch(users, search), max)" />
+        </template>
+      </vs-table>
+
+      <vs-dialog v-model="editActive">
+        <template #header>
+            Change Prop {{ editProp }}
+        </template>
+        <vs-input @keypress.enter="editActive = false" v-if="editProp == 'email'" v-model="edit[editProp]" />
+        <vs-select @change="editActive = false" block v-if="editProp == 'name'" placeholder="Select" v-model="edit[editProp]">
+          <vs-option label="Vuesax" value="Vuesax">
+            Vuesax
+          </vs-option>
+          <vs-option label="Vue" value="Vuejs">
+            Vue
+          </vs-option>
+        </vs-select>
+      </vs-dialog>
     </div>
-</template>
-
+  </template>
 <script>
-
-export default {
-    data() {
-        return {
-            burger_id:null,
-            status:[],
-            msg:null,
-            burgers:
-            [              
-                {
-                    "nome": "Thiago",
-                    "lanche": "Italiano Branco",
-                    "endereco": "Alcatra",
-                    "opcionais": [
-                    "Tomate"
-                    ],
-                    "status": "",
-                    "id": 1
-                },
-                {
-                    "nome": "Clist",
-                    "lanche": "3 Queijos",
-                    "endereco": "Maminha",
-                    "opcionais": [
-                    "Cheddar"
-                    ],
-                    "status": "Solicitado",
-                    "id": 2
-                },
-                {
-                    "nome": "TAINAN CAMARGO DE MORAES",
-                    "lanche": "Italiano Branco",
-                    "endereco": "Maminha",
-                    "opcionais": [
-                    "Cheddar",
-                    "Bacon",
-                    "Salame"
-                    ],
-                    "status": "Solicitado",
-                    "id": 3
-                },
-                {
-                    "nome": "Biel teste",
-                    "lanche": "3 Queijos",
-                    "endereco": "Picanha",
-                    "opcionais": [
-                    "Salame",
-                    "Cheddar",
-                    "Bacon"
-                    ],
-                    "status": "Solicitado",
-                    "id": 4
-                },
-                {
-                    "nome": "TAINAN CAMARGO DE MORAES",
-                    "lanche": "3 Queijos",
-                    "endereco": "Alcatra",
-                    "opcionais": [
-                    "Bacon",
-                    "Cheddar",
-                    "Pepino"
-                    ],
-                    "status": "Solicitado",
-                    "id": 5
-                }
-             ]
-
-        }
-    }, 
-}
-</script>
-
-<style lang="scss">
-    #burger-table {
-        max-width: 90rem;
-        margin: 50px auto 0 auto;
+    export default {
+      data:() => ({
+        editActive: false,
+        edit: null,
+        editProp: {},
+        search: '',
+        allCheck: false,
+        page: 1,
+        max: 5,
+        active: 0,
+        selected: [],
+        users: [
+        {
+            "id": 1,
+            "code": 1,
+            "name": "X-algo",
+            "description": "Lorem Ispn",
+            "image": "",
+            "price": 1,
+            "category": "Lanches",
+            "quantity":  1,
+            "rating": 5,
+            "additional": "[]",
+            "optional": true,
+            "sales": 12,
+        },
+        {
+            "id": 1,
+            "code": 1,
+            "name": "X-algo",
+            "description": "Lorem Ispn",
+            "image": "",
+            "price": 1,
+            "category": "Lanches",
+            "quantity":  1,
+            "rating": 5,
+            "additional": "[]",
+            "optional": true,
+            "sales": 12,
+        },
+        {
+            "id": 1,
+            "code": 1,
+            "name": "X-algo",
+            "description": "Lorem Ispn",
+            "image": "",
+            "price": 1,
+            "category": "Lanches",
+            "quantity":  1,
+            "rating": 5,
+            "additional": "[]",
+            "optional": true,
+            "sales": 12,
+        },
+        ]
+      })
     }
+    </script>
 
-    #burger-table-heading,
-    #burger-table-rows,
-    .burger-table-row {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    id: int,
+code: int NOT NULL,
+name: varchar(40) NOT NULL,
+description: varchar(60) NOT NULL,
+image: varchar(100),
+price: decimal not null,
+category: string,
+quantity: int,
+rating: int,
+additional:[],
+optional: boolean
 
-    #burger-table-heading {
-        font-weight: bold;
-        padding: 1.5rem;
-        border-bottom: 3px solid #333;
-    }
-
-    #burger-table-heading div,
-    .burger-table-row div {
-        width: 19%;
-    }
-
-    .burger-table-row {
-        width: 100%;
-        padding: 1rem;
-        border: 1px solid #CCC;
-    }
-
-    #burger-table-heading .order-id,
-    .burger-table-row .order-number {
-        width: 5%;
-    }
-
-    select {
-        padding: .8rem .4rem;
-    }
-
-    .delete-btn {
-        background-color: #222;
-        color: #fcba03;
-        font-weight: bold;
-        border:2px solid #222;
-        padding: .8rem;
-        font-size: .9rem;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s;
-    }
-
-    .delete-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-</style>
+        

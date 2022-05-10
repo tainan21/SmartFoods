@@ -1,4 +1,5 @@
 <template>
+     <div>
      <div class="ContainerWrapper">
           <div class="container">
                <div class="Banner"></div>
@@ -68,9 +69,16 @@
                </vs-card>  -->
           </div>
      </div>
+     <div>
+          <BottomNaveWrapper :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/>
+     </div>
+     </div>
 </template>
-  <script>
-    export default {
+<script>
+     import BottomNaveWrapper from "@/components/menu/MenuBottomWrapper.vue";
+     export default {
+     name: "App",
+     components: { BottomNaveWrapper },
       data:() => ({
           active: 0,
           sending: false,
