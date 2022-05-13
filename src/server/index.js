@@ -8,6 +8,13 @@ const http = axios.create({
     getListRequest: ()=> {
         
         return http.get('/getListPedido')
+    }   ,
+
+    addProduto: (payload)=> {
+        console.log("chegou aqui", payload) 
+        return http.post('/addProduto', payload)
     }   
+
+    
  }
  

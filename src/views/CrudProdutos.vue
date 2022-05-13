@@ -1,6 +1,5 @@
-
 <template>
-    <div class="center">
+ <div class="center">
       <vs-table v-model="selected">
         <template #header> <vs-input v-model="search" border placeholder="Search" /></template>
         <template #thead>
@@ -67,12 +66,19 @@
           </vs-option>
         </vs-select>
       </vs-dialog>
+
+      <button @click="addProduct">salvar</button>
     </div>
-  </template>
+</template>
+
 <script>
-    export default {
-      data:() => ({
-        editActive: false,
+import { mapActions } from "vuex";
+  
+  export default {
+
+     data() {
+      return {
+         editActive: false,
         edit: null,
         editProp: {},
         search: '',
@@ -81,6 +87,25 @@
         max: 5,
         active: 0,
         selected: [],
+        // objeto base para cadastrar um produto
+        objProduct: 
+          {
+            CreationDate: "2022-05-11",
+            CreationUserId: 1,
+            UpdateDate: "2022-05-11",
+            UpdateUserId: 1,
+            DeletionDate: null,
+            DeletionUserId: null,
+            code: 1,
+            name: "amazon",
+            description: "teste descrição",
+            image: "link img",
+            price: 45,
+            category: "teste",
+            quantity: 4,
+            rating: 5,
+            sales: "3"
+          },
         users: [
         {
             "id": 1,
@@ -125,20 +150,34 @@
             "sales": 12,
         },
         ]
-      })
-    }
-    </script>
+      }
+    },  
+     
+    methods: {
+      ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
 
-    id: int,
-code: int NOT NULL,
-name: varchar(40) NOT NULL,
-description: varchar(60) NOT NULL,
-image: varchar(100),
-price: decimal not null,
-category: string,
-quantity: int,
-rating: int,
-additional:[],
-optional: boolean
+      getProducts(){
+        this.ActionGetListRequest().then((response)=>{
+          console.log("lista de produtos",response)
+        })
+      },
+      addProduct(){
+        this.ActionAddProduct(this.objProduct).then((response)=>{
+          console.log("retorno do post ", response)
+        })
+      }
+    },  
+
+    mounted() {
+      this.getProducts()
+    },
+    
+    
+}
+</script>
+
+<style lang="scss" scoped>
+</style>
+  
 
         
