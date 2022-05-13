@@ -29,6 +29,12 @@ export default new Vuex.Store({
     {     
       return server.getListRequest()
     },
+
+    ActionAddProduct (context, payload)
+    {     
+          
+     return server.addProduto(payload)   
+    },
   },
   modules: {
   }

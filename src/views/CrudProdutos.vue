@@ -78,12 +78,34 @@
           <vs-pagination v-model="page" :length="$vs.getLength($vs.getSearch(users, search), max)" />
         </template>
       </vs-table>
+
+      <vs-dialog v-model="editActive">
+        <template #header>
+            Change Prop {{ editProp }}
+        </template>
+        <vs-input @keypress.enter="editActive = false" v-if="editProp == 'email'" v-model="edit[editProp]" />
+        <vs-select @change="editActive = false" block v-if="editProp == 'name'" placeholder="Select" v-model="edit[editProp]">
+          <vs-option label="Vuesax" value="Vuesax">
+            Vuesax
+          </vs-option>
+          <vs-option label="Vue" value="Vuejs">
+            Vue
+          </vs-option>
+        </vs-select>
+      </vs-dialog>
+
+      <button @click="addProduct">salvar</button>
     </div>
-  </template>
+</template>
+
 <script>
-    export default {
-      data:() => ({
-        editActive: false,
+import { mapActions } from "vuex";
+  
+  export default {
+
+     data() {
+      return {
+         editActive: false,
         edit: null,
         editProp: {},
         search: '',
@@ -93,7 +115,25 @@
         active2: false,
         active: 0,
         selected: [],
-        progress: 0,
+        // objeto base para cadastrar um produto
+        objProduct: 
+          {
+            CreationDate: "2022-05-11",
+            CreationUserId: 1,
+            UpdateDate: "2022-05-11",
+            UpdateUserId: 1,
+            DeletionDate: null,
+            DeletionUserId: null,
+            code: 1,
+            name: "amazon",
+            description: "teste descrição",
+            image: "link img",
+            price: 45,
+            category: "teste",
+            quantity: 4,
+            rating: 5,
+            sales: "3"
+          },
         users: [
         {
             "id": 1,
@@ -138,51 +178,34 @@
             "sales": 12,
         },
         ]
-      }),
-      methods: {
-        openLoading() {
-          const loading = this.$vs.loading({
-            progress: 0
-          })
-          const interval = setInterval(() => {
-            if (this.progress <= 100) {
-              loading.changeProgress(this.progress++)
-            }
-          }, 10)
-          setTimeout(() => {
-            loading.close()
-            clearInterval(interval)
-            this.progress = 0
-          }, 1000)
-        },
-        openNotification(position = null, color) {
-          this.$vs.notification({
-            progress: 'auto',
-            color,
-            position,
-            title: 'Deseja Realmente deletar?+',
-            text: `Produtos deletados são perdidos, junto com o seu id e suas informações de venda, em ultimo caso salve o código do produto`
-          })
-        }
       }
-    }
-    </script>
-<style lang="scss">
-  .teste{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-  }
-  .teste2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-  }
-</style>
+    },  
+     
+    methods: {
+      ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
 
+      getProducts(){
+        this.ActionGetListRequest().then((response)=>{
+          console.log("lista de produtos",response)
+        })
+      },
+      addProduct(){
+        this.ActionAddProduct(this.objProduct).then((response)=>{
+          console.log("retorno do post ", response)
+        })
+      }
+    },  
+
+    mounted() {
+      this.getProducts()
+    },
+    
+    
+}
+</script>
+
+<style lang="scss" scoped>
+</style>
+  
+
+        
