@@ -1,7 +1,6 @@
 <template>
 <div>
   <FacaPedido />
-  <router-view/>
 </div>
 
 </template>

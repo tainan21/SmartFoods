@@ -72,6 +72,8 @@
      <div>
           <BottomNaveWrapper :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/>
      </div>
+     <router-view/>
+
      </div>
 </template>
 <script>

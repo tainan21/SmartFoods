@@ -1,43 +1,51 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-3"> 
-        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
+     <div class="tab-content tab-content-basic">
+            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="statistics-details d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                    <div class="card-header statistics-title">Bounce Rate</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title rate-percentage">32.53%</h5>
+                                        <p class="card-text text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                    <div class="card-header statistics-title">Page Views</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title rate-percentage">7,682</h5>
+                                        <p class="card-text text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>+0.1%</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                    <div class="card-header statistics-title">New Sessions</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title rate-percentage">68.8</h5>
+                                        <p class="d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                    <div class="card-header statistics-title">Avg. Time on Site</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title rate-percentage">2m:35s</h5>
+                                        <p class="d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-3"> 
-        <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-3"> 
-        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-3"> 
-        <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
   <div class="row">
       <div class="col"> Grafico de Lucros aqui </div>
       <div class="col"> 

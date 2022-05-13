@@ -24,6 +24,11 @@ const routes = [
     component: () => import('../views/CarShop.vue')
   },
   {
+    path: '/CadastrarProdutos',
+    name: 'CadastrarProdutos',
+    component: () => import('../pages/CrudProducts.vue')
+  },
+  {
     path: '/CrudProdutos',
     name: 'CrudProdutos',
     component: () => import('../views/CrudProdutos.vue')

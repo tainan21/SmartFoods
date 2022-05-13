@@ -1,46 +1,58 @@
+
 <template>
-<div class="container">
-    <h1>This is an about page</h1>
-    <input type="text" v-model="first">
-    <input type="button" value="set Pedido" @click="setPedido">
-    <input type="button" value="get pedido" @click="getPedido">
+    <div class="center container">
+  
+      <vs-button flat @click="active2=!active2">
+        Confirm
+      </vs-button>
+   
+      <vs-dialog width="550px" not-center v-model="active">
+        <template #header>
+          <h4 class="not-margin">
+            Welcome to <b>Vuesax</b>
+          </h4>
+        </template>
+        <template #footer>
+          <div class="con-footer">
+            <vs-button @click="active=false" transparent>
+              Ok
+            </vs-button>
+          </div>
+        </template>
+      </vs-dialog>
+    
+      <vs-dialog width="300px" not-center v-model="active3">
+        <template #header>
+          <h4 class="not-margin">
+            Welcome what is your <b>Name</b>
+          </h4>
+        </template>
 
-    <button type="button" class="btn btn-primary">Primary</button>
 
-</div>
-</template>
+        <div class="con-content">
+          <vs-input v-model="input1" placeholder="Name"></vs-input>
+        </div>
 
+        <template #footer>
+          <div class="con-footer">
+            <vs-button @click="active3=false" transparent>
+              Ok
+            </vs-button>
+            <vs-button @click="active3=false" dark transparent>
+              Cancel
+            </vs-button>
+          </div>
+        </template>
+      </vs-dialog>
+    </div>
+  </template>
 <script>
-import {
-    mapActions,
-    mapGetters
-} from "vuex";
-export default {
-    data() {
-        return {
-            first: '',
-            secund: '',
-        }
-    },
-    methods: {
-        ...mapGetters(["GetPedido"]),
-        ...mapActions(["ActionSetPedido", "ActionGetListRequest"]),
-
-        setPedido() {
-            
-            sessionStorage.first = this.first
-           
-        },
-        async getPedido() {
-            await this.ActionGetListRequest().then((response) => {
-                console.log(response)
-            })
-            
-        }
-
-    },
-    mounted() {
-        //this.getPedido()
+    export default {
+      data:() => ({
+        active: false,
+        active2: false,
+        active3: false,
+        input1: '',
+      })
     }
-}
-</script>
+  </script>

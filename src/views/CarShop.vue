@@ -1,7 +1,6 @@
-
 <template>
-<div class="CarShopBg">
-     <div class="container form">
+     <div class="CarShopBg">
+          <div class="container form">
           <div class="row">
                <div class="col-lg-8 col-12">
                     <div class="row">
@@ -14,7 +13,7 @@
                                    </vs-input>
                               </div>
                          </div>
-                          <div class="col-8">
+                         <div class="col-8">
                               <div class="center content-inputs">
                                    <vs-input color="#7d33ff" border type="name" v-model="Endereco" placeholder="Endereço">
                                         <template #icon>
@@ -23,7 +22,7 @@
                                    </vs-input>
                               </div>
                          </div>
-                          <div class="col-4">
+                         <div class="col-4">
                               <div class="center content-inputs">
                                    <vs-input color="#7d33ff" border type="name" v-model="Num" placeholder="Número">
                                         <template #icon>
@@ -73,7 +72,7 @@
                </div>
           </div>
      </div>
-</div>
+     </div>
 </template>
 
 <script>
