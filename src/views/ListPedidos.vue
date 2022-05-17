@@ -1,4 +1,3 @@
-
 <template>
     <div class="center container">
       <vs-table v-model="selected">
@@ -7,7 +6,9 @@
         </template>
         <template #thead>
           <vs-tr>
-            <vs-th><vs-checkbox :indeterminate="selected.length == users.length" v-model="allCheck" @change="selected = $vs.checkAll(selected, users)"/></vs-th>
+            <vs-th>
+              <vs-checkbox :indeterminate="selected.length == users.length" v-model="allCheck" @change="selected = $vs.checkAll(selected, users)"/>
+            </vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'status')">Status</vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'name')"> Cliente </vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'endereco')"> Endereço </vs-th>
@@ -23,14 +24,12 @@
             <vs-td style="text-align: start"> {{ tr.name }} </vs-td>
             <vs-td style="text-align: start"> {{ tr.endereco }} </vs-td>
             <vs-td style="text-align: start">{{ tr.tempo }}</vs-td>
-           
           </vs-tr>
         </template>
         <template #footer>
           <vs-pagination v-model="page" :length="$vs.getLength($vs.getSearch(users, search), max)" />
         </template>
       </vs-table>
-
       <vs-dialog v-model="editActive">
         <template #header>
             Change Prop {{ editProp }}

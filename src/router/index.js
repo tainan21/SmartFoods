@@ -39,6 +39,11 @@ const routes = [
     component: () => import('../views/ListPedidos.vue')
   },
   {
+    path: '/StaticsGraph',
+    name: 'StaticsGraph',
+    component: () => import('../views/StaticsGraph.vue')
+  },
+  {
     path: '/ProdutoDetalhes',
     name: 'Produtos',
     component: () => import('../pages/ProdutoDetalhes.vue')

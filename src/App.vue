@@ -1,6 +1,6 @@
 <template>
   <div>
-   <ComponentePrincipal /> 
+  <ComponentePrincipal /> 
   <!-- <ComponenteWrapper />  -->
    </div>
 </template>

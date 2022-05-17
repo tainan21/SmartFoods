@@ -1,5 +1,5 @@
 <template class="grid col-12" >
-	<div id="btn-app"> <BottomNavigation :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/> </div>
+  <div id="btn-app"><BottomNavigation :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/> </div>
 </template>
 <script>
 import BottomNavigation from "@/components/menu/MenuBottomTeste.vue";

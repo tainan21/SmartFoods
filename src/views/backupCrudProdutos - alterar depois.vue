@@ -191,7 +191,7 @@ import { mapActions } from "vuex";
             this.ActionAddProduct(this.objProduct).then((response)=>{
               console.log("retorno do post ", response)
             })
-          },  
+          }, 
         openLoading() {
           const loading = this.$vs.loading({
             progress: 0

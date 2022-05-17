@@ -9,12 +9,9 @@ const http = axios.create({
         
         return http.get('/getListPedido')
     }   ,
-
     addProduto: (payload)=> {
         console.log("chegou aqui", payload) 
         return http.post('/addProduto', payload)
     }   
-
-    
  }
  

@@ -50,7 +50,7 @@
       //! Menu settings
       isMenuOpen: {
         type: Boolean,
-        default: true,
+        default: false,
       },
       menuTitle: {
         type: String,
@@ -82,47 +82,36 @@
         type: Array,
         default: () => [
           {
-            path: '/',
-            name: 'Dashboard',
-            tooltip: 'Dashboard',
-            icon: 'bx-beer',
-          },
-          {
-            to: '/about',
-            name: 'User',
-            tooltip: 'User',
-            icon: 'bx-user',
-          },
-          {
             link: '/',
-            name: 'DashBoard',
+            name: 'Página Inicial ',
             tooltip: 'Messages',
+            icon: 'bx-pie-chart-alt-2',
+          },
+          {
+            link: '/StaticsGraph',
+            name: 'Estatisticas',
+            tooltip: 'Analytics',
             icon: 'bx-pie-chart-alt-2',
           },
           {
             link: '/about',
-            name: 'About',
+            name: 'Sobre',
             tooltip: 'Analytics',
             icon: 'bx-pie-chart-alt-2',
           },
-               {
+          {
+            link: '/StaticsGraph',
+            name: 'Vendas',
+            tooltip: 'Analytics',
+            icon: 'bx-pie-chart-alt-2',
+          },
+          {
             link: '/ClientesList',
-            name: 'Lista de Clientes',
+            name: 'Clientes',
             tooltip: 'Messages',
             icon: 'bx-chat',
           },
-          {
-            link: '/ListPedidos',
-            name: 'Lista de Pedidos',
-            tooltip: 'Analytics',
-            icon: 'bx-pie-chart-alt-2',
-          },
-          {
-            link: '/CrudProdutos',
-            name: 'CrudProdutos',
-            tooltip: 'Files',
-            icon: 'bx-folder',
-          },
+          
           {
             link: '/ProdutoDetalhes',
             name: 'ProdutoDetalhes',
@@ -137,9 +126,21 @@
           },
           {
             link: '/CarShop',
-            name: 'CarShop',
+            name: 'Carrinho',
             tooltip: 'Setting',
             icon: 'bx-cog',
+          },
+          {
+            link: '/ListPedidos',
+            name: 'Pedidos',
+            tooltip: 'Analytics',
+            icon: 'bx-pie-chart-alt-2',
+          },
+          {
+            link: '/CrudProdutos',
+            name: 'Produtos',
+            tooltip: 'Files',
+            icon: 'bx-folder',
           },
           {
             link: '/MenuBottom',
@@ -156,6 +157,10 @@
         ],
       },
 
+      nomeEmpresa: {
+        type: String,
+        default: 'Galaxia Burguer'
+      },
       //! Search
       isSearch: {
         type: Boolean,
@@ -169,7 +174,6 @@
         type: String,
         default: 'Search',
       },
-
       //! Profile detailes
       profileImg: {
         type: String,
@@ -190,43 +194,53 @@
       //! Styles
       bgColor: {
         type: String,
-        default: '#11101d',
+        //default: '#11101d',
+        default: '#fff',
       },
       secondaryColor: {
         type: String,
-        default: '#1d1b31',
+        //default: '#1d1b31',
+        default: '#fff',
       },
       homeSectionColor: {
         type: String,
-        default: '#e4e9f7',
+        //default: '#e4e9f7',
+        default: '#fff',
       },
       logoTitleColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
       iconsColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
       itemsTooltipColor: {
         type: String,
-        default: '#e4e9f7',
+        //default: '#e4e9f7',
+        default: '#fff',
       },
       searchInputTextColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
       menuItemsHoverColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
       menuItemsTextColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
       menuFooterTextColor: {
         type: String,
-        default: '#fff',
+        //default: '#fff',
+        default: '#11101d',
       },
     },
     data() {
