@@ -12,6 +12,7 @@
             <vs-th sort @click="users = $vs.sortData($event ,users, 'status')">Status</vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'name')"> Cliente </vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'endereco')"> Endereço </vs-th>
+            <vs-th sort @click="users = $vs.sortData($event ,users, 'endereco')"> Preço </vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'tempo')">tempo</vs-th>
           </vs-tr>
         </template>
@@ -23,6 +24,7 @@
             <vs-td edit @click="edit = tr, editProp = 'status', editActive = true" style="text-align: start"> {{ tr.status }} </vs-td>
             <vs-td style="text-align: start"> {{ tr.name }} </vs-td>
             <vs-td style="text-align: start"> {{ tr.endereco }} </vs-td>
+            <vs-td style="text-align: start">{{ tr.valorpedido }}</vs-td>
             <vs-td style="text-align: start">{{ tr.tempo }}</vs-td>
           </vs-tr>
         </template>
@@ -66,6 +68,7 @@
             "name": "Tainan",
             "username": "Bret",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -74,6 +77,7 @@
             "name": "Tainan",
             "username": "Antonette",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -82,6 +86,7 @@
             "name": "Tainan",
             "username": "Samantha",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -90,6 +95,7 @@
             "name": "Tainan",
             "username": "Karianne",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -97,6 +103,7 @@
             "name": "Tainan Camargo",
             "username": "Kamren",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -105,6 +112,7 @@
             "name": "Tainan",
             "username": "Leopoldo_Corkery",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -113,6 +121,7 @@
             "name": "Tainan",
             "username": "Elwyn.Skiles",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -121,6 +130,7 @@
             "name": "Tainan",
             "username": "Maxime_Nienow",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -129,6 +139,7 @@
             "name": "Tainan",
             "username": "Delphine",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           },
           {
@@ -137,6 +148,7 @@
             "name": "Tainan",
             "username": "Moriah.Stanton",
             "endereco": "Rua antonio massarana 677, Jardim Esplanada",
+            "valorpedido": 19.90,
             "tempo": 20
           }
         ],

@@ -100,6 +100,12 @@
             icon: 'bx-pie-chart-alt-2',
           },
           {
+            link: '/canban',
+            name: 'canban',
+            tooltip: 'Analytics',
+            icon: 'bx-pie-chart-alt-2',
+          },
+          {
             link: '/StaticsGraph',
             name: 'Vendas',
             tooltip: 'Analytics',

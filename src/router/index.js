@@ -24,6 +24,11 @@ const routes = [
     component: () => import('../views/CarShop.vue')
   },
   {
+    path: '/Canban',
+    name: 'canban',
+    component: () => import('../views/kanbanView.vue')
+  },
+  {
     path: '/CadastrarProdutos',
     name: 'CadastrarProdutos',
     component: () => import('../pages/CrudProducts.vue')

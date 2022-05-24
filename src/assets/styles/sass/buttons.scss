@@ -1,0 +1,194 @@
+.bg-close{
+    background-color: $bg-red-custom !important;
+    box-shadow: 0 5px 10px $bg-red-custom !important;   
+    border-color: $bg-red-custom !important;
+    
+}
+.bg-open{
+    background-color: $bg-green-custom !important;
+}
+
+.bg-orange-custom{
+    background-color: $bg-orange-custom !important;
+    border-color: $bg-orange-custom !important;
+    box-shadow: 0 2px 2px $bg-orange-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+
+.bg-redLight-custom{
+    background-color: $bg-redLight-custom !important;
+    border-color: $bg-redLight-custom !important;
+    box-shadow: 0 2px 2px $bg-redLight-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+
+.bg-blue-custom{
+    background-color: $bg-blue-custom !important;
+    border-color: $bg-blue-custom !important;
+    box-shadow: 0 2px 2px $bg-blue-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+
+.bg-green-custom{
+    background-color: $bg-green-custom !important;
+    border-color: $bg-green-custom !important;
+    box-shadow: 0 2px 2px $bg-green-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.bg-black-custom{
+    background-color: $bg-black-custom !important;
+    border-color: $bg-black-custom !important;
+    box-shadow: 0 2px 2px $bg-black-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.bg-red-custom{
+    background-color: $bg-red-custom !important;
+    box-shadow: 0 2px 2px $bg-red-custom !important;   
+    border-color: $bg-red-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.bg-purple-custom{
+    background-color: $bg-purple-custom !important;
+    border-color: $bg-purple-custom !important;
+    box-shadow: 0 2px 2px $bg-purple-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.bg-cianes-custom{
+    background-color: $bg-cianes-custom !important;
+    box-shadow: 0 2px 2px $bg-cianes-custom !important;
+    border-color: $bg-cianes-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+     &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.bg-yellow-custom{
+    background-color: $bg-yellow-custom !important;
+    box-shadow: 0 2px 2px $bg-yellow-custom !important;
+    border-color: $bg-yellow-custom !important;
+    transition: all .2s ease-out;
+    width: 100%;
+    &:hover{
+        box-shadow: 0 2px 2px $bg-black-custom !important;
+    }
+}
+.legenda {
+    color: $colorLegenda;
+    font-size: $fontSize;
+    font-weight: $wheitLegend;
+    line-height: 150%;
+}
+.fontBanner{
+  font-family: $fontBanner;
+  font-size: 7vw;
+}
+@media only screen and (max-width: 800px) {
+    .fontBanner{
+      font-size: 9vw;
+    }
+}
+.svg {
+    width: 10%;
+    fill: #72a200 !important;
+    &:hover{   fill: $bg-yellow-custom !important}
+}
+
+.button-burguer {
+    font-style: none;
+    color: black;
+    transition: opacity 400ms ease 0s, transform 400ms ease 0s;
+    transform: translateY(0px);
+    opacity: 1;
+    padding: 20px 16px !important;
+}
+.button-burguer:hover {
+    transition: opacity 400ms ease 0s, transform 400ms ease 0s;
+    transform: translateY(0px);
+    opacity: 1;
+    background-color: rgb(250, 250, 250);
+}
+.button-sort{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5px;
+}
+/* 
+
+.bartopMenu{
+    color: white;
+    animation: changeColorBarTop 5s infinite alternate;
+}
+*/
+// alien
+@keyframes changeColorBarTop {
+    0% {
+      color: #fff;
+    }
+    20%{
+        color:$bg-cianes-custom !important;
+    }
+    40%{
+        color: $bg-green-custom !important;
+    }
+    60%{
+        color: $bg-yellow-custom !important;
+    }
+    80%{
+        color: $bg-red-custom !important;
+    }
+    100% {
+      color: $bg-purple-custom !important;
+    }
+  }
+
+@keyframes changeColor {
+    0% {
+      fill: #fff;
+    }
+    20%{
+        fill:$bg-cianes-custom !important;
+    }
+    40%{
+        fill: $bg-green-custom !important;
+    }
+    60%{
+        fill: $bg-yellow-custom !important;
+    }
+    80%{
+        fill: $bg-red-custom !important;
+    }
+    100% {
+      fill: $bg-purple-custom !important;
+    }
+  }
