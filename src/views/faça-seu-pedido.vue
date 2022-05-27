@@ -130,51 +130,7 @@
 .ContainerWrapper{
   margin-top: 20px;
 }
-.Filters{
-     position: relative;
-     width: 100%;
-     height: 72px;
-     margin: 8px 0px 0px;
-     overflow: scroll hidden;
-     border-top: 1px solid rgb(232, 234, 237);
-     display: flex;
-     flex-direction: row;
-     -webkit-box-pack: initial;
-     justify-content: initial;
-     -webkit-box-align: center;
-     align-items: center;
-     white-space: nowrap;
-     background-color: rgb(255, 255, 255);
-     &_wrapper{
-          padding-right: 22px;
-          margin-left: 14px;
-          display: flex;
-          &-item{
-               font-weight: 500;
-               color: rgb(255, 255, 255);
-               margin: 0 10px;
-               height: 40px;
-               font-family: Poppins,sans-serif;
-          }
-          &-icon{
-               margin-right: 5px;
-          }
-     }
-}
-.Filter{
-    background-color: #f3f5f7;
-    &_Buttons{
-          flex-direction: row;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          &-Item{
-               flex-direction: row;
-               display: flex;
-               font-family: Poppins,sans-serif;
-          }
-    }
-}
+
 .Products{
      display: flex;
      align-items: center;

@@ -1,9 +1,13 @@
 <template>
   <div class="container">
+    <h1 class="Title">Painel</h1>
+    <h3 class="">Boas Vindas, GalaxiaBurguer!</h3>
+    <h3 class="">Fique ligado nas suas estátisticas!</h3>
      <div class="tab-content tab-content-basic">
             <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
                 <div class="row">
                     <div class="col-sm-12">
+                        <h2> Novos Pedidos </h2>
                         <div class="statistics-details d-flex align-items-center justify-content-between">
                             <div>
                                 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
