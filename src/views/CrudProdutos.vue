@@ -95,11 +95,14 @@
       </vs-dialog>
 
       <button @click="addProduct">salvar</button>
+       <button @click="getProducts">get produtos</button>
+
     </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+
   
   export default {
 
@@ -185,7 +188,7 @@ import { mapActions } from "vuex";
       ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
 
       getProducts(){
-        this.ActionGetListRequest().then((response)=>{
+       this.ActionGetListRequest().then((response)=>{
           console.log("lista de produtos",response)
         })
       },
@@ -198,6 +201,7 @@ import { mapActions } from "vuex";
 
     mounted() {
       this.getProducts()
+      console.log($this.$store.state)
     },
     
     

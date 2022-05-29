@@ -10,7 +10,7 @@ const http = axios.create({
         return http.get('/getListPedido')
     }   ,
     addProduto: (payload)=> {
-        console.log("chegou aqui", payload) 
+        console.log("salvou", payload) 
         return http.post('/addProduto', payload)
     }   
  }
