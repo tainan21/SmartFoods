@@ -23,16 +23,27 @@
         <h3 class="text-center">Dados Globais da sua Loja</h3>
         <p class="text-center">{{textdata}}</p>
         <div class="StaticsWrapper">
-            
+            <h2 class="subtitle">Categoria mais vendida </h2>
+            <BarChart />
+            <h2 class="subtitle">Categoria mais vendida </h2>
+            <PieChart />
+
         </div>
     </div>
 </div>
 </template>
-  <script>
-    export default {
-      data:() => ({
-        active: 0,
-        textdata: 'hoje'
-      })
-    }
-  </script>
+    <script>
+        import BarChart from '@/components/chart/Bar.vue'
+        import PieChart from '@/components/chart/Pie.vue'
+        export default {
+        name: 'App',
+        components: {
+            BarChart,
+            PieChart
+        },
+        data:() => ({
+            active: 0,
+            textdata: 'hoje'
+        })
+        }
+    </script>

@@ -1,3 +1,7 @@
+
+
+
+
 <template>
      <div class="container">
           <h1 class="title">Painel</h1>
@@ -5,7 +9,7 @@
                <div class="cardWrapper"> 
                     <h2 class="subtitle"> Novos Pedidos </h2>
                     <div class="row">
-                         <div class="col-lg-3 col-md-6 col-12">
+                         <div class="col-lg-3 col-6">
                               <div class="cardStyle">
                                    <div class="flex align-center cardStyleBox">
                                         <i class="bx bx-user cardStyleIcon"></i>
@@ -16,7 +20,7 @@
                                    </div>
                               </div>
                          </div>
-                          <div class="col-lg-3 col-md-6 col-12">
+                          <div class="col-lg-3 col-6">
                               <div class="cardStyle">
                                    <div class="flex align-center cardStyleBox">
                                         <i class="bx bx-user cardStyleIcon"></i>
@@ -27,7 +31,7 @@
                                    </div>
                               </div>
                          </div>
-                          <div class="col-lg-3 col-md-6 col-12">
+                          <div class="col-lg-3 col-6">
                               <div class="cardStyle">
                                    <div class="flex align-center cardStyleBox">
                                         <i class="bx bx-user cardStyleIcon"></i>
@@ -38,7 +42,7 @@
                                    </div>
                               </div>
                          </div>
-                          <div class="col-lg-3 col-md-6 col-12">
+                          <div class="col-lg-3 col-6">
                               <div class="cardStyle">
                                    <div class="flex align-center cardStyleBox">
                                         <i class="bx bx-user cardStyleIcon"></i>
@@ -54,8 +58,7 @@
           </div>
           <div class="row">
           <div class="col">
-               <h2 class="subtitle"> </h2>
-               <BarChart />
+               <h2 class="subtitle">Gráfico de Lucro </h2>
           </div>
           <div class="col"> 
           <div class="center examplex">
@@ -79,9 +82,9 @@
           </div>
           </div>
           <div class="row">
+
                <div class="col">
-                    <h2 class="subtitle">Categoria mais vendida </h2>
-                    <PieChart />
+                    <h2 class="subtitle">Gráfico de aumento de vendas </h2>
                </div>
                <div class="col">   
                     <div class="center examplex">
@@ -109,56 +112,48 @@
      </div>
 </template>
 
+    
 
 <script>
-import BarChart from '@/components/chart/Bar.vue'
-import PieChart from '@/components/chart/Pie.vue'
-export default {
-     name: 'App',
-     components: {
-          BarChart,
-          PieChart
-     },
-  data() {
-    return {
-     Newusers: [
-     {
-          "id": 1,
-          "name": "Leanne Graham",
-          "username": "Bret",
-          "email": "Sincere@april.biz",
-          "website": "hildegard.org",
-     },
-     {
-          "id": 2,
-          "name": "Ervin Howell",
-          "username": "Antonette",
-          "email": "Shanna@melissa.tv",
-          "website": "anastasia.net",
-     },
-     ],
-     NewPedidos: [
-     {
-          "id": 1,
-          "name": "Calma ai",
-          "username": "Bret",
-          "status": "Finalizado",
-          "lucro": 21.00,
-          "email": "Sincere@april.biz",
-     },
-     {
-          "id": 2,
-          "name": "Calma ai",
-          "username": "Bret",
-          "status": "Finalizado",
-          "lucro": 21.50,
-          "email": "Sincere@april.biz",
-     }
-     ]
-    };
-  },
-};
-</script>
+    export default {
+      data:() => ({
+        Newusers: [
+          {
+            "id": 1,
+            "name": "Leanne Graham",
+            "username": "Bret",
+            "email": "Sincere@april.biz",
+            "website": "hildegard.org",
+          },
+          {
+            "id": 2,
+            "name": "Ervin Howell",
+            "username": "Antonette",
+            "email": "Shanna@melissa.tv",
+            "website": "anastasia.net",
+          },
+        ],
+         NewPedidos: [
+          {
+            "id": 1,
+            "name": "Calma ai",
+            "username": "Bret",
+            "status": "Finalizado",
+            "lucro": 21.00,
+            "email": "Sincere@april.biz",
+          },
+          {
+            "id": 2,
+            "name": "Calma ai",
+            "username": "Bret",
+            "status": "Finalizado",
+            "lucro": 21.50,
+            "email": "Sincere@april.biz",
+          }
+        ]
+      })
+    }
+    </script>
 
 <style lang="scss">
 .title{
