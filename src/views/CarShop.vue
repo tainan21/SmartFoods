@@ -22,7 +22,6 @@
                                         <div class="text-left">
                                              <!--   <div v-if="pedido.payload.additional.length > 0" class="mb-3 legenda">Adicionais:</div> -->
                                              <div class="mb-3 legenda">Adicionais:</div>
-                                        
                                         </div>
                                         <!--<div v-for=" (value) in pedido.payload.additional" :key="value.id" class="mb-1 legenda"> -->
                                         <div class="mb-1 legenda">     
@@ -85,8 +84,12 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="col-lg-4 col-12"></div>
+                         <div class="col-lg-4 col-12">
+                                                                           meto de pagamento my friend
+
+                         </div>
                     </div>
+                     <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-green-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Enviar para o whatsapp </vs-button>
                </div>
           </div>
      </div>
