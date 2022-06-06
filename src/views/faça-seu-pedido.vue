@@ -2,15 +2,7 @@
      <div>
      <div class="Containerrapper">
           <div class="container">
-               <div class="bannerLegenda flex align-items-center justify-content-center lg:p-5 p-3">
-                    <div class="fontBanner m-3 text-white">{{name_empresa}}</div>
-                    <svg viewBox="0 0 124.000000 152.000000" preserveAspectRatio="xMidYMid meet" fill="none" >
-                    <g id="BG" transform="translate(0.000000,152.000000) scale(0.100000,-0.100000)" enable-background="none" rect="none">
-                    <path id="BGElement" d="M484 1510 c-228 -41 -387 -181 -456 -400 -20 -65 -23 -95 -23 -225 1 -170 14 -237 70 -350 71 -145 306 -416 421 -485 49 -29 67 -35 118 -35 93 0 142 29 271 159 185 186 292 345 332 496 25 92 24 330 -1 420 -40 144 -141 283 -251 344 -97 54 -189 78 -315 82 -63 1 -138 -1 -166 -6z m-179 -733 c111 -66 239 -242 252 -345 5 -45 3 -51 -17 -62 -59 -32 -193 14 -281 97 -105 98 -135 253 -60 310 21 16 80 16 106 0z m749 -18 c36 -43 36 -124 1 -196 -50 -99 -176 -189 -280 -200 -71 -7 -95 7 -95 56 0 83 127 274 225 339 65 43 113 44 149 1z m-332 -561 c-20 -20 -33 -23 -102 -23 -69 0 -82 3 -102 23 l-22 22 124 0 124 0 -22 -22z"
-                    fill="#E6E6E6"/>
-                    </g>
-               </svg>
-               </div>
+               <!-- <img src="@/assets/product/banner.png" class="img-fluid" alt="Responsive image" style="width: 1200px; height: 300px; background-size: cover; object-fit: cover;"/> -->
           </div>
           <div class="container">
                <div class="Info">
@@ -61,28 +53,6 @@
                     </div>
                     <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
                </a>
-                <!--
-               <vs-card type="2">
-                    <template #title>
-                         <p class="Products_Box-Title">Lanches Tradicionais</p>
-                    </template>
-                    <template #img>
-                         <img src="@/assets/product/1.jpg"  alt="">
-                    </template>
-                    <template #text>
-                         <p class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso</p>
-                    </template>
-                   
-                    <template #interactions>
-                         <vs-button danger icon><i class='bx bx-heart'></i></vs-button>
-                         <vs-button class="btn-chat" shadow primary>
-                              <i class='bx bx-chat' ></i>
-                                   <span class="span">
-                                        54
-                                   </span>
-                         </vs-button>
-                    </template>
-               </vs-card>  -->
           </div>
      </div>
      <div class="" style="margin-bottom: 50px; margin-top: 50px">footer</div>
@@ -193,7 +163,6 @@
      //background-size: auto;
      //background-image: url('@/assets/banner1.png');  
      //background-repeat: no-repeat;
-     background-color: #000;
      width: 100%;
      height: 300px;
      display: flex;
@@ -202,7 +171,6 @@
      color: white;
 }
 .Info{
-  background-color: #666;
   flex-direction: row;
   display: flex;
   justify-content: space-between;

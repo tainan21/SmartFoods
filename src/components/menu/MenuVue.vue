@@ -1,6 +1,18 @@
 <template>
      <div class="MenuTest">
-       <div class="TopBar"></div>
+       <div class="TopBar">
+            <div class=""></div>
+            <div class="logo_name">{{ menuTitle }}</div>
+            <div class="">
+              <div class="profile" >
+                <div class="profile-details">
+                  <img v-if="profileImg" :src="profileImg" alt="profileImg">
+                  <i v-else class="bx bxs-user-rectangle"/>
+                </div>
+                <i v-if="isExitButton" class="bx bx-log-out" id="log_out" @click.stop="$emit('button-exit-clicked')"/>
+              </div>
+            </div>
+       </div>
           <div class="sidebar" :class="isOpened ? 'open' : ''" :style="cssVars">
                <div class="logo-details" style="margin: 6px 4px 0 14px;">
                     <img v-if="menuLogo" :src="menuLogo" alt="menu-logo" class="menu-logo icon">

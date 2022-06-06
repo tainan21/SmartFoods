@@ -1,15 +1,19 @@
 .TopBar{
-    //background-color: #11101d;
+    border-bottom: 1px solid #e7e6e7;
+    background: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 0px;
+    color: #000;
+    justify-content: space-between;
+    height: 50px;
     width: 100%;
     top: 0px;
+    border-radius: 10px;
     padding: 10px 60px 10px 60px;
+    margin-bottom: 20px;
      &_Menu{
        &-item{
-        color: #fff;
+        color: #000;
         &:hover{
           border-bottom: 1px solid black;
         }
