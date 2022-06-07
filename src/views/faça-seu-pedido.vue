@@ -37,46 +37,40 @@
                               </vs-button>
                          </div>
                </div>
-               <a class="Products" to="/ProdutoDetalhes">
-                    <div class="Products_Text">
-                         <div class="Products_Text-Title">X-tudo</div>
-                         <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
-                         <div class="Products_Text-Price">R$34.00</div>
+               <a v-for="product in listProduct" :key="product.id" class="Products" to="/ProdutoDetalhes">
+                    <div  class="Products_Text">
+                         <div class="Products_Text-Title">{{product.name}}</div>
+                         <div class="Products_Text-Description">{{product.description}}</div>
+                         <div class="Products_Text-Price">{{product.price}}</div>
                     </div>
-                    <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
+                    <img v-bind:src="product.image" alt="" class="img-thumbnail rounded float-right Products_img" >
                </a>
-               <a class="Products" to="/ProdutoDetalhes">
-                    <div class="Products_Text">
-                         <div class="Products_Text-Title">X-tudo</div>
-                         <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
-                         <div class="Products_Text-Price">R$34.00</div>
-                    </div>
-                    <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
-               </a>
+              
           </div>
      </div>
-     <div class="" style="margin-bottom: 50px; margin-top: 50px">footer</div>
-     <div>
-          <BottomNaveWrapper :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/>
-     </div>
-     <router-view/>
+        
+     
 
      </div>
 </template>
 <script>
-     import BottomNaveWrapper from "@/components/menu/MenuBottomWrapper.vue";
+   
+     import { mapActions } from "vuex";
      export default {
-     name: "App",
-     components: { BottomNaveWrapper },
+    
+  
       data:() => ({
           active: 0,
           name_empresa: "Galaxia Burguer",
           sending: false,
           success: false,
           loadingFace: false,
-          successFace: false
+          successFace: false,
+          listProduct: [],
       }),
           methods:{
+          ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
+
         handleClick() {
           this.sending = true
 
@@ -92,8 +86,18 @@
             this.loadingFace = false
             this.successFace = !this.successFace
           }, 2000);
+        },
+        getProducts(){
+              
+               this.ActionGetListRequest().then((response)=>{
+                    this.listProduct = response.data
+               console.log("lista de produtos",response)
+        })
         }
-      }
+      },
+      mounted () {
+           this.getProducts();
+      },
     }
   </script>
 <style lang="scss">

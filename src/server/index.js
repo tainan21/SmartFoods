@@ -8,7 +8,13 @@ const http = axios.create({
     getListRequest: ()=> {
         
         return http.get('/getListPedido')
-    }   ,
+    },
+
+    getListCategory: ()=> {
+        
+        return http.get('/getlLstCategory')
+    },
+
     addProduto: (payload)=> {
         console.log("salvou", payload) 
         return http.post('/addProduto', payload)

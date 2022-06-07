@@ -31,11 +31,18 @@ export default new Vuex.Store({
       return server.getListRequest()
     },
 
+    ActionGetListCategory ()
+    {     
+      return server.getListCategory()
+    },
+
     ActionAddProduct (context, payload)
     {     
           
      return server.addProduto(payload)   
     },
+
+    
   },
   modules: {
   }

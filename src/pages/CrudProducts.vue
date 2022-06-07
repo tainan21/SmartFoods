@@ -18,9 +18,10 @@
                 </vs-input>
             </div>
             <div class="col-12 m-2">
-                <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.category" placeholder="Categoria">
-                    <template #icon> <i class='bx bx-lock-open-alt'></i></template>
-                </vs-input>
+
+            <v-select :options="categories"  @input="setSelected"></v-select>
+
+            
             </div>
             <div class="col-12 m-2">
                 <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.quantity" placeholder="Quantidade">
@@ -44,6 +45,8 @@
 
 <script>
     import { mapActions } from "vuex";
+    import "vue-select/dist/vue-select.css";
+    
 
     export default {
         data() {
@@ -51,6 +54,7 @@
                 img: null,
                 files_img: [],
                 products: [],
+                categories: [],
                 objProduct: 
                 {
                   CreationDate: "2022-05-11",
@@ -64,7 +68,7 @@
                   description: "teste descrição",
                   image: "",
                   price: 45,
-                  category: "teste",
+                  category: "",
                   quantity: 4,
                   rating: 5,
                   sales: "3"
@@ -73,13 +77,28 @@
         },
       
       methods: {
-      ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
+      ...mapActions(["ActionGetListRequest", "ActionAddProduct", "ActionGetListCategory"]),
 
         getProducts(){
             this.ActionGetListRequest().then((response)=>{
             this.products = response.data          
-        })
-      },
+            })
+        },
+
+        getCategories(){
+            this.ActionGetListCategory().then((response)=>{                
+                response.data.forEach(element => {
+                    this.categories.push({id: element.id, label: element.category })  
+                });                                 
+            })
+        },
+
+        setSelected(value){
+            this.objProduct.category = value.id
+            console.log("set aqui: ", this.objProduct)
+        },
+        
+      
         addProduct(){
           try {
             this.salvarIMG() 
@@ -105,13 +124,10 @@
                 var reader = new FileReader();
                 reader.onload = ( () => {
                     
-                return  (e)=> {
-                    
+                return  (e)=> {                    
                     var binaryData = e.target.result;
                     //Converting Binary Data to base 64
-                    var base64String = window.btoa(binaryData);
-                    
-                    
+                    var base64String = window.btoa(binaryData);                                        
                     try {
                         fetch('http://localhost:4000/AddImage', {
                             method: 'POST',
@@ -121,22 +137,12 @@
                             response.json()                           
                         ).then(data => {      
                             this.objProduct.image = data.retorno.url                              
-                            this.ActionAddProduct(this.objProduct)                                             
-                             
-                             
-                        })
-                        
-                        
+                            this.ActionAddProduct(this.objProduct)                                                                                                       
+                        })                                                
                     } catch (err) {
                         console.error(err);
-                        console.log('Something went wrong!');
-                        
+                        console.log('Something went wrong!');                        
                     }
-
-                    
-                  
-                   
-                    //alert('File converted to base64 successfuly!\nCheck in Textarea');
                 };
             })(element);
             
@@ -147,11 +153,12 @@
         
     },  
     created () {
-        this.getProducts()
+       
     },
     mounted () {
+        this.getProducts()
+        this.getCategories()
         
-        //console.log(this.$store.state.pedido)
     },
     }
   </script>

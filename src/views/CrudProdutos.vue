@@ -2,10 +2,10 @@
     <div class="container center">
       <div class="row">
         <div class="col-10">
-          <vs-button upload :active="active == 0" to="/CadastrarProdutos" flat @click="openLoading">ADD +</vs-button>
+          <vs-button upload :active="active == 0" to="/CadastrarProdutos" flat >ADD +</vs-button>
         </div>
         <div class="col-2">
-          <vs-button flat danger border gradient icon @click="openNotification('top-left', 'danger')"> <i class="bx bx-border-radius t-l"></i> Delete </vs-button>
+          <vs-button flat danger border gradient icon @click="deleteAll('top-left', 'danger')"> <i class="bx bx-border-radius t-l"></i> Delete </vs-button>
            <vs-button flat @click="active2=!active2">Confirm</vs-button>
         </div>
       </div>
@@ -137,50 +137,7 @@ import { mapActions } from "vuex";
             rating: 5,
             sales: "3"
           },
-        users: [
-        {
-            "id": 1,
-            "code": 1,
-            "name": "X-algo",
-            "description": "Lorem Ispn",
-            "image": "",
-            "price": 1,
-            "category": "Lanches",
-            "quantity":  1,
-            "rating": 5,
-            "additional": "[]",
-            "optional": true,
-            "sales": 12,
-        },
-        {
-            "id": 1,
-            "code": 1,
-            "name": "X-algo",
-            "description": "Lorem Ispn",
-            "image": "",
-            "price": 1,
-            "category": "Lanches",
-            "quantity":  1,
-            "rating": 5,
-            "additional": "[]",
-            "optional": true,
-            "sales": 12,
-        },
-        {
-            "id": 1,
-            "code": 1,
-            "name": "X-algo",
-            "description": "Lorem Ispn",
-            "image": "",
-            "price": 1,
-            "category": "Lanches",
-            "quantity":  1,
-            "rating": 5,
-            "additional": "[]",
-            "optional": true,
-            "sales": 12,
-        },
-        ]
+        users: []
       }
     },  
      
@@ -189,19 +146,26 @@ import { mapActions } from "vuex";
 
       getProducts(){
        this.ActionGetListRequest().then((response)=>{
-          console.log("lista de produtos",response)
+         response.data.forEach(element => {
+            this.users.push(element)            
+         });                   
         })
       },
       addProduct(){
-        this.ActionAddProduct(this.objProduct).then((response)=>{
-          console.log("retorno do post ", response)
+        this.ActionAddProduct(this.objProduct).then((response)=>{          
         })
+      },
+      deleteAll(){
+        console.log(this.selected)
+      },
+      deleteOne(product){
+        console.log(product)
       }
     },  
 
     mounted() {
       this.getProducts()
-      console.log($this.$store.state)
+     // console.log($this.$store.state)
     },
     
     
