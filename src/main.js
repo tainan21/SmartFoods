@@ -6,6 +6,8 @@ import router from './router'
 import store from './store'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 
 Vue.use(Vuesax, {
   colors: {
@@ -17,12 +19,12 @@ Vue.use(Vuesax, {
     dark:'rgb(0, 03, 09)'
   }
 })
-
+Vue.component("v-select", vSelect);
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
+  store,  
   render: h => h(App)
 }).$mount('#app')

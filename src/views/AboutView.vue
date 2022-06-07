@@ -3,7 +3,7 @@
       <div clas="row">
         <div class="col-4">1 tete</div>
         <div class="col-4">1 tete</div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 ">
           <vs-card>
               <template #title>
                 <h3>X Tudo</h3>
@@ -27,7 +27,7 @@
               </template>
             </vs-card>
         </div>
-          <div class="col-lg-12">
+          <div class="col-lg-12 ">
           <vs-card>
               <template #title>
                 <h3>X Tudo</h3>

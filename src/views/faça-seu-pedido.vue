@@ -54,20 +54,36 @@
                          <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
                     </a>
                </div>
+               <a v-for="product in listProduct" :key="product.id" class="Products" to="/ProdutoDetalhes">
+                    <div  class="Products_Text">
+                         <div class="Products_Text-Title">{{product.name}}</div>
+                         <div class="Products_Text-Description">{{product.description}}</div>
+                         <div class="Products_Text-Price">{{product.price}}</div>
+                    </div>
+                    <img v-bind:src="product.image" alt="" class="img-thumbnail rounded float-right Products_img" >
+               </a>
+              
           </div>
      </div>
 </template>
 <script>
+   
+     import { mapActions } from "vuex";
      export default {
+    
+  
       data:() => ({
           active: 0,
           name_empresa: "Galaxia Burguer",
           sending: false,
           success: false,
           loadingFace: false,
-          successFace: false
+          successFace: false,
+          listProduct: [],
       }),
           methods:{
+          ...mapActions(["ActionGetListRequest", "ActionAddProduct"]),
+
         handleClick() {
           this.sending = true
 
@@ -83,8 +99,18 @@
             this.loadingFace = false
             this.successFace = !this.successFace
           }, 2000);
+        },
+        getProducts(){
+              
+               this.ActionGetListRequest().then((response)=>{
+                    this.listProduct = response.data
+               console.log("lista de produtos",response)
+        })
         }
-      }
+      },
+      mounted () {
+           this.getProducts();
+      },
     }
   </script>
 <style lang="scss">

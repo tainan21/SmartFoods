@@ -111,7 +111,7 @@
                               </div>
                          </div>
                     </div>
-                                        <div class="sc-bzc47e-5 jXfAwy">
+                    <div class="sc-bzc47e-5 jXfAwy">
 
                     <input id="input-phone" type="text" required="" inputmode="decimal" maxlength="50" data-test="input-phone" placeholder="(00) 00000-0000" class="sc-1i2sj5a-1 dztWiI" value="(14) 99141-4142"></input>
                     <!--    <div class="sc-1i2sj5a-3 hSkQsb">Informe o número do seu celular</div> --> 
@@ -568,4 +568,3 @@
           outline: 0px;
      }
 </style>
-
