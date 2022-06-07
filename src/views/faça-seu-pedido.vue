@@ -1,73 +1,64 @@
 <template>
      <div>
-     <div class="Containerrapper">
-          <div class="container">
-               <!-- <img src="@/assets/product/banner.png" class="img-fluid" alt="Responsive image" style="width: 1200px; height: 300px; background-size: cover; object-fit: cover;"/> -->
-          </div>
-          <div class="container">
-               <div class="Info">
-                    <div class="Info_Desc">Endereço X</div>
-                    <div class="Info_Button">Fechado</div>
+          <div class="Containerrapper">
+               <div class="container">
+                    <!-- <img src="@/assets/product/banner.png" class="img-fluid" alt="Responsive image" style="width: 1200px; height: 300px; background-size: cover; object-fit: cover;"/> -->
                </div>
-               <div class="Filter">
-                    <div class="row">
-                         <div class="col-12 mt-2 mb-2">
-                              <div class="row no-gutters">
-                                   <div class="Filters">
-                                        <div class="Filters_wrapper">     
-                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Lanches </vs-button>
-                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Lanches Tradicionais </vs-button>
-                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Bebidas </vs-button>
-                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Sobremesas </vs-button>
-                                             <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon"></i> Todos </vs-button>
+               <div class="container">
+                    <div class="Info">
+                         <div class="Info_Desc">Endereço X</div>
+                         <div class="Info_Button">Fechado</div>
+                    </div>
+                    <div class="Filter">
+                         <div class="row">
+                              <div class="col-12 mt-2 mb-2">
+                                   <div class="row no-gutters">
+                                        <div class="Filters">
+                                             <div class="Filters_wrapper">     
+                                                  <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Lanches </vs-button>
+                                                  <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Lanches Tradicionais </vs-button>
+                                                  <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Bebidas </vs-button>
+                                                  <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon "></i> Sobremesas </vs-button>
+                                                  <vs-button :active="active == 0" @click="active = 0" class="Filters_wrapper-item bg-red-custom button-filter"><i class="bx bx-home-alt Filters_wrapper-icon"></i> Todos </vs-button>
+                                             </div>
                                         </div>
                                    </div>
                               </div>
                          </div>
                     </div>
-               </div>
-               <div class="Products_Box">
-                         <p class="Products_Box-Title ">Lanches Tradicionais</p>
-                         <div class="Products_Box-Grid align-content-end align-items-end justify-content-end">
-                              <vs-button :animate-inactive="successFace" @click="handleClickFace" :loading="loadingFace" color="facebook">
-                                   <i class='bx ' ></i> {{ successFace ? 'Layout 2' : 'Layout 1' }}
-                                   <template #animate >
-                                        <i class='bx bx-user' ></i> Alterar
-                                   </template>
-                              </vs-button>
+                    <div class="Products_Box">
+                              <p class="Products_Box-Title ">Lanches Tradicionais</p>
+                              <div class="Products_Box-Grid align-content-end align-items-end justify-content-end">
+                                   <vs-button :animate-inactive="successFace" @click="handleClickFace" :loading="loadingFace" color="facebook">
+                                        <i class='bx ' ></i> {{ successFace ? 'Layout 2' : 'Layout 1' }}
+                                        <template #animate >
+                                             <i class='bx bx-user' ></i> Alterar
+                                        </template>
+                                   </vs-button>
+                              </div>
+                    </div>
+                    <a class="Products" to="/ProdutoDetalhes">
+                         <div class="Products_Text">
+                              <div class="Products_Text-Title">X-tudo</div>
+                              <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
+                              <div class="Products_Text-Price">R$34.00</div>
                          </div>
+                         <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
+                    </a>
+                    <a class="Products" to="/ProdutoDetalhes">
+                         <div class="Products_Text">
+                              <div class="Products_Text-Title">X-tudo</div>
+                              <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
+                              <div class="Products_Text-Price">R$34.00</div>
+                         </div>
+                         <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
+                    </a>
                </div>
-               <a class="Products" to="/ProdutoDetalhes">
-                    <div class="Products_Text">
-                         <div class="Products_Text-Title">X-tudo</div>
-                         <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
-                         <div class="Products_Text-Price">R$34.00</div>
-                    </div>
-                    <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
-               </a>
-               <a class="Products" to="/ProdutoDetalhes">
-                    <div class="Products_Text">
-                         <div class="Products_Text-Title">X-tudo</div>
-                         <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
-                         <div class="Products_Text-Price">R$34.00</div>
-                    </div>
-                    <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
-               </a>
           </div>
-     </div>
-     <div class="" style="margin-bottom: 50px; margin-top: 50px">footer</div>
-     <div>
-          <BottomNaveWrapper :options="options" :badge-color="badgeColor" :foreground-color="foregroundColor" v-model="selected"/>
-     </div>
-     <router-view/>
-
      </div>
 </template>
 <script>
-     import BottomNaveWrapper from "@/components/menu/MenuBottomWrapper.vue";
      export default {
-     name: "App",
-     components: { BottomNaveWrapper },
       data:() => ({
           active: 0,
           name_empresa: "Galaxia Burguer",
