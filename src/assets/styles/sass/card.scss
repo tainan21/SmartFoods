@@ -1,0 +1,41 @@
+.title{
+    color: #2C3357;
+    font-size: 28px;
+    line-height: 1.3;
+  
+}
+.subtitle{
+    color: #2C3357;
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 15px 0 10px 0;
+}
+.cardStyle{
+    flex: 1 1 auto;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 1px rgb(0 0 0 / 6%), 0 1px 4px rgb(0 0 0 / 8%);
+    background: #1f2937;
+    margin-bottom: 30px;
+   //#9ca3b9
+   //#8b5cf6
+   &Box{
+       flex-direction: row; 
+       display: flex;
+       align-items: center;
+   }
+   &Legenda{
+        color: #9ca3b9;
+   }
+   &Number{
+         color: #8b5cf6    
+   }
+   &Icon{
+        color: white;
+        font-size: 3rem;
+   }
+
+}
+.cardWrapper{
+    margin: 20px 0;
+}

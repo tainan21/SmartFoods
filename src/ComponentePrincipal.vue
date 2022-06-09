@@ -1,16 +1,17 @@
 <template>
   <div>
-    <div class="barshow">
-      <TopBar />
+    <div class="barshow"> 
+<!--      <TopBar /> -->
       <MenuVue />
+      <router-view/>
     </div>
     <div class="topbarshowphone">
-      <TopBarPhone />
-      <MenuVuePhone />
-      <MenuBottomSystem /> 
+      <MenuVue />
+      <router-view/>
+      <MenuBottomSystem />
+<!--      <TopBarPhone /> -->
+<!--       <MenuVuePhone /> -->
     </div>
-    <router-view/>
-     
   </div>
 </template>
 

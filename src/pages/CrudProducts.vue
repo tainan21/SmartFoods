@@ -1,7 +1,33 @@
 <template>
     <div class="container">
-        <h1 class="text-center">Cadastro de Produtos</h1>
-        <div class="row">
+        <vs-card type="3" class="center" @click="$refs.fileC.click()" > 
+				<template #title>
+				<h3>Cadastre sua imagem</h3>
+				</template>
+				<template #img>
+				<img src="@/assets/product/1.jpg"  alt="">
+				<div v-for="item in products" :key="item.id" class="w-100"> 
+					<img v-bind:src="item.image" width="300px" alt="">
+				</div>   
+				</template>
+				<template #text>
+				<p>Imagem do seu produto, até o momento o produto só pode ter uma imagem</p>
+				</template>
+				<template #interactions>
+				<vs-button danger icon>
+					<i class='bx bx-heart' hidden type="file" id="fileC" ref="fileC" v-on:change="handleFileUpload()" @click="$refs.fileC.click()" ></i>
+				</vs-button>
+				<vs-button class="btn-chat" shadow primary>
+					<i class='bx bx-chat' @click="$refs.fileC.click()" ></i>
+					<span class="span">54</span>
+				</vs-button>
+    		</template>
+  		</vs-card>
+		<h5 class="">Selecione uma Categoria</h5>
+		<div class="col-12 m-2">
+	        <v-select :options="categories"  @input="setSelected"></v-select>
+        </div>
+		<div class="row">
             <div class="col-12 m-2">
                 <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.name" placeholder="Nome do Produto">
                     <template #icon> <i class='bx bx-lock-open-alt'></i></template>
@@ -18,12 +44,6 @@
                 </vs-input>
             </div>
             <div class="col-12 m-2">
-
-            <v-select :options="categories"  @input="setSelected"></v-select>
-
-            
-            </div>
-            <div class="col-12 m-2">
                 <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.quantity" placeholder="Quantidade">
                     <template #icon> <i class='bx bx-lock-open-alt'></i></template>
                 </vs-input>
@@ -31,13 +51,11 @@
             <div v-for="item in products" :key="item.id" class="w-100"> 
                 <img v-bind:src="item.image" width="300px" alt="">
             </div>    
-            <span @click="$refs.fileC.click()" class="border rounded m-1" style=" color: white; background-color: #5dbfd4; cursor: pointer" > Adicionar Imagem</span>
+            <span class="border rounded m-1" style=" color: white; background-color: #5dbfd4; cursor: pointer" > </span>
             <input hidden type="file" id="fileC" ref="fileC" v-on:change="handleFileUpload()"/>    
-
-                   
-
-            <div @click="addProduct" style="cursor: pointer; margin-top: 20px">Salvar Produto</div>
-            <div @click="getProducts" style="cursor: pointer; margin-top: 20px">Get Produto</div>
+            <vs-button gradient :active="active == 0" @click="$refs.fileC.click()">Adicionar Imagem</vs-button>
+			<vs-button gradient :active="active == 1" @click="addProduct">Salvar Produto</vs-button>
+			<vs-button gradient :active="active == 1" @click="getProducts">Get Produto</vs-button>
         </div>   
     </div>
 </template>
@@ -64,12 +82,12 @@
                   DeletionDate: null,
                   DeletionUserId: null,
                   code: 1,
-                  name: "amazon",
-                  description: "teste descrição",
+                  name: "",
+                  description: "",
                   image: "",
-                  price: 45,
+                  price: null,
                   category: "",
-                  quantity: 4,
+                  quantity: null,
                   rating: 5,
                   sales: "3"
                 },
