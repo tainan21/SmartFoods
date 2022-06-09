@@ -1,220 +1,456 @@
 <template>
-  <div class="div-flex flex-column border">
-    <div class="div-flex justify-content-between border-bottom">
-      <div class="div-flex flex-row align-items-center">
-        <h5 class="ml-4 mt-1 mr-2">{{ task.title }}</h5>
-        <i class="fas fa-tasks fa-lg" style="color: green"></i>
-      </div>
-
-      <div class="div-flex flex-row">
-        <i class="fas fa-ellipsis-h m-2 click" style=""></i>
-        <i
-          class="fas fa-times m-2 click icon-close"
-          @click="$emit('close_details')"
-        ></i>
-      </div>
-    </div>
-
-    <div class="div-flex flex-row align-items-center mt-2 mb-1" style="">
-      <div class="click ml-4">
-        <i class="fas fa-paperclip" style="color: #242a75"></i>
-        <span class="ml-1 item-lista">Anexar arquivo</span>
-      </div>
-      <div class="click ml-5">
-        <i class="fas fa-user-plus" style="color: #049ddd"></i>
-        <span class="ml-1 item-lista">Adicionar Responsável</span>
-      </div>
-      <div class="click ml-5">
-        <i class="fas fa-plus ml-3 click" style="color: green"></i>
-        <span class="ml-1 item-lista">Adicionar sub-tarefa</span>
-      </div>
-    </div>
-    <div class="mt-2">
-      <div class="progress">
+  <div class="div-flex flex-row">
+    <div class="div-flex flex-column w-100">
+      <!-- 1° for -->
+      <div v-for="item in columns" :key="item.id" class="">
+        <!-- 2° for -->
         <div
-          class="progress-bar"
-          role="progressbar"
-          :style="`width: ${progress}%`"
-          aria-valuenow="25"
-          aria-valuemin="0"
-          aria-valuemax="100"
+          v-for="(task, index) in item.tasks"
+          :key="index"
+          class="mb-1 div-flex flex-column"
         >
-          {{ progress }}%
-        </div>
+          <div class="div-flex flex-row align-items-center ml-3 lista-div ">           
+            <i v-if="!task.show"
+              @click="task.show = !task.show"
+              class="fas fa-chevron-right fa-xs click"
+              style="color: #049ddd"
+            ></i>
+             <i v-if="task.show" class="fas fa-chevron-down fa-xs click"  style="color: #049ddd " @click="task.show = !task.show" ></i>
+           <div class="  justify-content-end" style="display: flex; width: 50px">
+        <img
+          width="25px"
+          height="25px"
+          class="m-2 rounded-circle"
+          src="https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png"
+          alt="Avatar"
+        />
+                           
+        
       </div>
-    </div>
-
-    <div
-      class="mt-2 ml-4 div-flex flex-column"
-      style="overflow-y: auto; max-height: 300px"
-    >
-      <div>
-        <div
-          v-for="sub_task in task.sub_tasks"
-          :key="sub_task.id"
-          class="div-flex flex-row align-items-center lista-div"
-        >
-          <div class="form-check">
-            <input
-              @click="att_progress"
-              v-model="sub_task.complete"
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1"></label>
-          </div>
-          <div class="justify-content-end" style="display: flex; width: 50px">
-            <img
-              width="25px"
-              height="25px"
-              class="m-2 rounded-circle"
-              src="https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png"
-              alt="Avatar"
-            />
-          </div>
-          <div class="click">
-            <span class="ml-2" style="font-size: 15px">{{
-              sub_task.title
-            }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-2 mb-3 ml-4">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Descrição</label
-      >
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="4"
-         placeholder="Digite aqui.."
-      ></textarea>
-
-      <div class="div-flex justify-content-center mt-4  ">
-        <span class="text-center"> Comentários</span>
-      </div>
-
-      <div
-        class="div-flex flex-column "
-        style="overflow-y: auto; max-height: 300px"
-      >
-        <div
-          v-for="comment in comments"
-          :key="comment.id"
-          class="div-flex flex-column justify-content-center mt-2"
-        >
-          <div class="div-flex flex-row align-items-center">
-            <div class="" style="width: 50px">
-              <img
-                width="25px"
-                height="25px"
-                class="m-2 rounded-circle"
-                src="https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png"
-                alt="Avatar"
-              />
+            <div class="w-100 click" @click="detalhes_task(task, index) ">
+              <span class="ml-2" style="font-size: 15px">{{ task.title }}</span>
+              <div class="w-100 div-flex ml-2 hr-accordion"></div>
             </div>
-            <div>
-              <span class="titulo"> {{ comment.user }} </span>
-              <span style="font-size: 12px" class="ml-2">{{
-                comment.date | moment("DD, MMMM  YYYY")
-              }}</span>
-            </div>
+           
           </div>
 
-          <div class="div-flex flex-column  w-75 ml-5 comment">
-            <div class="m-2">
-            {{ comment.comment }}
+          <div v-if="task.show">
+            <div
+              v-for="sub_task in task.sub_tasks"
+              :key="sub_task.id"
+              class="
+                mt-1
+                ml-5
+                mr-4
+                div-flex
+                flex-row
+                align-items-center
+                lista-sub-div
+              "
+              @click="detalhes_sub_task(sub_task)"
+            >
+              <div
+                class="justify-content-end"
+                style="display: flex; width: 50px"
+              >
+                <img
+                  width="25px"
+                  height="25px"
+                  class="m-2 rounded-circle"
+                  src="https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png"
+                  alt="Avatar"
+                />
+              </div>
+              <div class="w-100 click">
+                <span class="ml-2" style="font-size: 14px">{{
+                  sub_task.title
+                }}</span>
+                <div
+                  v-if="task.show"
+                  class="w-100 div-flex ml-2 hr-accordion"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="div-flex flex-row mt-4  ">
-        <div class="w-100">
-          <textarea
-          v-model="comment"
-            class="form-control"            
-            rows="2"  
-            placeholder="Digite aqui.."                          
-          ></textarea>
-        </div>
-
-        <div>
-          <button @click="comentar" class="btn btn-primary ml-3 mr-3">
-            Enviar
-          </button>
-        </div>
-      </div>
     </div>
+
+    <!-- detalhes lateral -->
+    <Detalhes
+      v-if="detalhes"
+      v-on:close_details="close_detalhes"
+      class="w-100"
+      :task="task"
+    />
+    
+
+    <SubTask
+      v-if="detalhes_sub_tarefas"
+      v-on:close_details="close_detalhes"
+      class="w-100"
+      :task="sub_task"
+    />
+
+    <!-- fim do lateral -->
   </div>
 </template>
 
 <script>
+import Detalhes from "@/components/kanban/ListCardDetail.vue";
+import SubTask from "@/components/kanban/CardSubTask.vue";
 export default {
-  props: {
-    task: {
-      type: Object,
-      default: () => ({}),
-    },
+  components: {
+    Detalhes,
+    SubTask,
   },
   data() {
     return {
-      comment: "",
+      
+      detalhes_sub_tarefas: false,
+      detalhes: false,
+      sub_task: null,
+      task: null,
+      index: null,
       progress: 0,
-      user: "Tiago Araújo",
-      comments: [
+      columns: [
         {
-          user: "Tiago Araújo",
-          comment:
-            "Teste comentário vamos ver até aonde vai essa linha de comentario test test test teste test" +
-            "test teste test test teste test teste teste teste teste teste teste",
-          date: new Date(),
+          title: "Backlog",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 1,
+                  title: "Add discount code to checkout page sub_task1",
+                  date: "Sep 14",
+                  complete: true,
+                },
+                {
+                  id: 20,
+                  title: "Add discount code to checkout page sub_task2",
+                  date: "Sep 14",
+                  complete: true,
+                },
+                {
+                  id: 21,
+                  title: "Add discount code to checkout page sub_task3",
+                  date: "Sep 14",
+                  complete: false,
+                },
+                {
+                  id: 22,
+                  title: "Add discount code to checkout page sub_task4",
+                  date: "Sep 14",
+                  complete: false,
+                },
+              ],
+              id: 1,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 2,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 2,
+              title: "Provide documentation on integrations",
+              date: "Sep 12",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 3,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 3,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 4,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 4,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 5,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 5,
+              title: "Test checkout flow",
+              date: "Sep 15",
+              type: "QA",
+              show: false,
+            },
+          ],
         },
-     
+        {
+          title: "In Progress",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 6,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 6,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 7,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 7,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 8,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 8,
+              title: "Provide documentation on integrations",
+              date: "Sep 12",
+              type: "Backend",
+              show: false,
+            },
+          ],
+        },
+        {
+          title: "Review",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 9,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 9,
+              title: "Provide documentation on integrations",
+              date: "Sep 12",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 10,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 10,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 11,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 11,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 12,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 12,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 13,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 13,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+          ],
+        },
+        {
+          title: "Done",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 14,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 14,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 15,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 15,
+              title: "Design shopping cart dropdown ",
+              date: "Sep 9",
+              type: "Design",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 15,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 16,
+              title: "Add discount code to checkout page ",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+          ],
+        },
+        {
+          title: "Bug",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 17,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 17,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 18,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 18,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Backend",
+              show: false,
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 19,
+                  title: "Add discount code to checkout page sub_task",
+                  date: "Sep 14",
+                },
+              ],
+              id: 19,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+              show: false,
+            },
+          ],
+        },
       ],
     };
   },
-
   methods: {
-    task_progres() {
-      let count = 0;
-      let complete = 0;
-      let progess_atual = 0;
+    detalhes_task(task, index) {
       this.detalhes = true;
-      this.task.sub_tasks.forEach((element) => {
-        count++;
-        if (element.complete) {
-          complete++;
-        }
-      });
-      progess_atual = 100 / count;
-      this.progress = parseFloat((progess_atual * complete).toFixed(2));
+      this.detalhes_sub_tarefas = false;
+      this.task = task;
+      this.index = index;
+      
     },
-    att_progress() {
+
+    close_detalhes() {
+      this.detalhes = false;
+      this.detalhes_sub_tarefas = false;
+    },
+
+    detalhes_sub_task(sub_task) {
+      this.sub_task = sub_task;
       setTimeout(() => {
-        this.task_progres();
+        (this.detalhes_sub_tarefas = true), (this.detalhes = false);
       }, 500);
     },
-    comentar(){
-      this.comments.push({user: this.user, comment: this.comment, date: new Date()})
-      this.comment = ""
-      
-    }
-  },
-  beforeUpdate() {
-    this.task_progres();
-  },
-
-  mounted() {
-    this.task_progres();
   },
 };
 </script>
 
-<style scoped>
+<style  scoped>
 .div-flex {
   display: flex;
 }
@@ -229,7 +465,7 @@ export default {
 }
 .lista-div {
   background-color: white;
-  width: 100%;
+  width: 97%;
 }
 .lista-div:hover {
   background-color: rgba(0, 0, 0, 0.048);
@@ -260,8 +496,5 @@ export default {
 }
 .titulo {
   font-weight: 900;
-}
-.comment {
-  background-color: rgba(0, 0, 0, 0.048);
 }
 </style>

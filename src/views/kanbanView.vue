@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="">
+  <div id="app" class="container">
     <div class="align-items-center flex-column w-100 " style="display: flex">
       <div
         @click="show_task"
@@ -19,7 +19,13 @@
             </div>
           </div>
           <!-- Draggable component comes from vuedraggable. It provides drag & drop functionality -->
-          <draggable :list="column.tasks" :animation="200" ghost-class="ghost-card" group="tasks " class="">
+          <draggable
+            :list="column.tasks"
+            :animation="200"
+            ghost-class="ghost-card"
+            group="tasks "
+            class=""
+          >
             <!-- Each element from here will be draggable and animated. Note :key is very important here to be unique both for draggable and animations to be smooth & consistent. -->
             <task-card
               v-for="task in column.tasks"
@@ -48,7 +54,7 @@ export default {
     return {
       columns: [
         {
-          title: "Para Fazer",
+          title: "Backlog",
           tasks: [
             {
               sub_tasks: [
@@ -129,7 +135,7 @@ export default {
           ],
         },
         {
-          title: "Preparando",
+          title: "In Progress",
           tasks: [
             {
                sub_tasks: [
@@ -173,7 +179,7 @@ export default {
           ],
         },
         {
-          title: "Entregue",
+          title: "Review",
           tasks: [
             {
               sub_tasks: [
@@ -242,7 +248,51 @@ export default {
           ],
         },
         {
-          title: "Finalizado",
+          title: "Done",
+          tasks: [
+            {
+              sub_tasks: [
+                {
+                  id: 14,
+                  title: "Add discount code to checkout page",
+                  date: "Sep 14",
+                },
+              ],
+              id: 14,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 15,
+                  title: "Add discount code to checkout page",
+                  date: "Sep 14",
+                },
+              ],
+              id: 15,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design",
+            },
+            {
+              sub_tasks: [
+                {
+                  id: 16,
+                  title: "Add discount code to checkout page",
+                  date: "Sep 14",
+                },
+              ],
+              id: 16,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request",
+            },
+          ],
+        },
+        {
+          title: "Bug",
           tasks: [
             {
               sub_tasks: [
