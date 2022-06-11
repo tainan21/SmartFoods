@@ -45,6 +45,14 @@
                          </div>
                          <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
                     </a>
+                      <a class="Products" to="/ProdutoDetalhes">
+                         <div class="Products_Text">
+                              <div class="Products_Text-Title">X-tudo</div>
+                              <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
+                              <div class="Products_Text-Price">R$34.00</div>
+                         </div>
+                         <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
+                    </a>
                     <a class="Products" to="/ProdutoDetalhes">
                          <div class="Products_Text">
                               <div class="Products_Text-Title">X-tudo</div>
@@ -53,15 +61,16 @@
                          </div>
                          <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
                     </a>
-               </div>
-               <a v-for="product in listProduct" :key="product.id" class="Products" to="/ProdutoDetalhes">
-                    <div  class="Products_Text">
+                    <a v-for="product in listProduct" :key="product.id" class="Products" to="/ProdutoDetalhes">
+                    <div @click="detailProduct" class="Products_Text">
                          <div class="Products_Text-Title">{{product.name}}</div>
                          <div class="Products_Text-Description">{{product.description}}</div>
                          <div class="Products_Text-Price">{{product.price}}</div>
                     </div>
                     <img v-bind:src="product.image" alt="" class="img-thumbnail rounded float-right Products_img" >
                </a>
+               </div>
+               <router-view></router-view>
               
           </div>
      </div>
@@ -106,6 +115,9 @@
                     this.listProduct = response.data
                console.log("lista de produtos",response)
         })
+        },
+        detailProduct(){
+             this.$router.push('/ProdutoDetalhes')
         }
       },
       mounted () {
