@@ -1,4 +1,8 @@
 <template>
+  <div>
+     <div class="loader-container">
+      <img src="@/assets/loader.gif" alt="">
+    </div>
     <div class="container">
       <div clas="row">
         <div class="col-4">1 tete</div>
@@ -53,4 +57,50 @@
         </div>         
       </div>
     </div>
+      </div>
 </template>
+
+<script>
+export default {
+    components: {
+      'MenuVue': MenuVue,
+      'MenuVuePhone': MenuVuePhone,
+      'TopBar': TopBar,
+      'TopBarPhone': TopBarPhone,
+      'MenuBottomSystem': MenuBottomSystem,
+    },
+    methods: {
+      loader(){
+        document.querySelector('.loader-container').classList.add('fade-out');
+      },
+      fadeOut(){
+        setInterval(loader, 3000);
+        window.onload = fadeOut;
+      },
+    }
+  }
+  
+</script>
+<style>
+  .loader-container{
+      position: fixed;
+      top:0; left:0;
+      height:100%; 
+      width:100%;
+      z-index: 10000;
+      background:#fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+  }
+
+  .loader-container img{
+      width:35rem;
+  }
+
+  .loader-container.fade-out{
+      top:-110%;
+      opacity:0;
+  }
+</style>

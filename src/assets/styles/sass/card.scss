@@ -11,24 +11,65 @@
     margin: 15px 0 10px 0;
 }
 .cardStyle{
-    flex: 1 1 auto;
-    padding: 1rem;
-    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 1em;
+    color: #ffffff;
+    border: solid 1px #dfe6ee;
+    border-radius: 3px;
     box-shadow: 0 4px 20px 1px rgb(0 0 0 / 6%), 0 1px 4px rgb(0 0 0 / 8%);
-    background: #1f2937;
-    margin-bottom: 30px;
    //#9ca3b9
    //#8b5cf6
-   &Box{
-       flex-direction: row; 
-       display: flex;
-       align-items: center;
+   &orange{
+    background-image: linear-gradient(to right, #f8c737, #f4a22e);
+   }
+   &blue{
+    background-image: linear-gradient(to right, #12aeee, #0080d4);
+   }
+   &pink{
+    background-image: linear-gradient(to right, #fe7b94, #fd4a85);
+   }
+   &purple{
+    background-image: linear-gradient(to right, #bc74f8, #9042db);
+   }
+   &Icon{
+    border: solid 1.4px white;
+    width: 45px;
+    line-height: 40px;
+    height: 45px;
+    font-size: 24px;
+    margin: auto;
+    margin-top: -24px;
+    border-radius: 50%;
+    color: #fff;
+    &orange{
+        background-image: linear-gradient(to right, #f8c737, #f4a22e);
+    }
+    &blue{
+        background-image: linear-gradient(to right, #12aeee, #0080d4);
+    }
+    &pink{
+        background-image: linear-gradient(to right, #fe7b94, #fd4a85);
+    }
+    &purple{
+        background-image: linear-gradient(to right, #bc74f8, #9042db);
+    }
    }
    &Legenda{
-        color: #9ca3b9;
+        padding: 8px;
+        font-size: 18px;
+        letter-spacing: 0.23px;
+   }
+   &SubLegenda{
+        padding: 8px;
+        font-size: 14px;
    }
    &Number{
-         color: #8b5cf6    
+         padding: 8px;
+         font-size: 30px;
+         letter-spacing: 1px;   
    }
    &Icon{
         color: white;

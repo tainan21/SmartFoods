@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="barshow"> 
+    <div class="barshow">
+ 
 <!--      <TopBar /> -->
       <MenuVue />
       <router-view/>
@@ -31,9 +32,7 @@ import MenuBottomSystem from '@/components/menu/MenuBottomSystem.vue'
       'MenuBottomSystem': MenuBottomSystem,
     },
   }
-  
  </script>
-
  <style>
 @media (max-width: 599px)
 {
