@@ -9,6 +9,7 @@
             <vs-th>
               <vs-checkbox :indeterminate="selected.length == users.length" v-model="allCheck" @change="selected = $vs.checkAll(selected, users)"/>
             </vs-th>
+            <vs-th>imprimir</vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'status')">Status</vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'name')"> Cliente </vs-th>
             <vs-th sort @click="users = $vs.sortData($event ,users, 'endereco')"> Endereço </vs-th>
@@ -21,6 +22,7 @@
             <vs-td checkbox>
               <vs-checkbox :val="tr" v-model="selected" />
             </vs-td>
+            <vs-td style="text-align: start"> <button onclick="window.print()">imprimir</button></vs-td>
             <vs-td edit @click="edit = tr, editProp = 'status', editActive = true" style="text-align: start"> {{ tr.status }} </vs-td>
             <vs-td style="text-align: start"> {{ tr.name }} </vs-td>
             <vs-td style="text-align: start"> {{ tr.endereco }} </vs-td>

@@ -1,106 +1,51 @@
+
 <template>
-  <div>
-     <div class="loader-container">
-      <img src="@/assets/loader.gif" alt="">
-    </div>
-    <div class="container">
-      <div clas="row">
-        <div class="col-4">1 tete</div>
-        <div class="col-4">1 tete</div>
-        <div class="col-lg-12 ">
-          <vs-card>
-              <template #title>
-                <h3>X Tudo</h3>
-              </template>
-              <template #img>
-                <img src="@/assets/product/1.jpg" class="img-fluid" alt="Responsive image" style="width: 100%; height: 200px; background-size: cover; object-fit: cover;">
-              </template>
-              <template #text>
-                <p>Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</p>
-              </template>
-              <template #interactions>
-                <vs-button danger icon>
-                  Tradicional
-                </vs-button>
-                <vs-button class="btn-chat" shadow primary>
-                  <i class='bx bx-chat' ></i>
-                  <span class="span">
-                    54
-                  </span>
-                </vs-button>
-              </template>
-            </vs-card>
-        </div>
-          <div class="col-lg-12 ">
-          <vs-card>
-              <template #title>
-                <h3>X Tudo</h3>
-              </template>
-              <template #img>
-                <img src="@/assets/product/1.jpg" class="img-fluid" alt="Responsive image" style="width: 100%; height: 200px; background-size: cover; object-fit: cover;">
-              </template>
-              <template #text>
-                <p>Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</p>
-              </template>
-              <template #interactions>
-                <vs-button danger icon>
-                  Tradicional
-                </vs-button>
-                <vs-button class="btn-chat" shadow primary>
-                  <i class='bx bx-chat' ></i>
-                  <span class="span">
-                    54
-                  </span>
-                </vs-button>
-              </template>
-            </vs-card>
-        </div>         
-      </div>
-    </div>
-      </div>
+  <form id="app" @submit="checkForm" action="https://vuejs.org/" method="post" @click="checkForm">
+    <label for="name">Nome</label>
+    <input id="name" v-model="name" type="text" name="name">
+    <label for="age">Idade</label>
+    <input id="age" v-model="age" type="number" name="age"min="0">
+    <label for="movie">Filme favorito</label>
+    <input type="submit" value="Enviar" @click="openNotification('top-left', 'danger')" >
+</form>
 </template>
 
 <script>
 export default {
-    components: {
-      'MenuVue': MenuVue,
-      'MenuVuePhone': MenuVuePhone,
-      'TopBar': TopBar,
-      'TopBarPhone': TopBarPhone,
-      'MenuBottomSystem': MenuBottomSystem,
-    },
-    methods: {
-      loader(){
-        document.querySelector('.loader-container').classList.add('fade-out');
-      },
-      fadeOut(){
-        setInterval(loader, 3000);
-        window.onload = fadeOut;
-      },
+  data() {
+    return {
+      errors: [],
+      name: null,
+      age: null,
+      movie: null
     }
+  },
+  methods:{
+    checkForm: function (e) {
+      if (this.name && this.age) {
+        return true;
+      }
+      this.errors = [];
+      if (!this.name) {
+        this.errors.push('O nome é obrigatório <br>');
+      }
+      if (!this.age) {
+        this.errors.push('A idade é obrigatória <br>');
+      }
+      if (!this.movie) {
+        this.errors.push('O filme está vazio  <br>');
+      }
+      e.preventDefault();
+    },
+    openNotification(position = null, color) {
+      this.$vs.notification({
+        progress: 'auto',
+        color,
+        position,
+        title: this.errors,
+        text: 'Por favor, corrija esses erros'
+      })
+    },
   }
-  
+}
 </script>
-<style>
-  .loader-container{
-      position: fixed;
-      top:0; left:0;
-      height:100%; 
-      width:100%;
-      z-index: 10000;
-      background:#fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-  }
-
-  .loader-container img{
-      width:35rem;
-  }
-
-  .loader-container.fade-out{
-      top:-110%;
-      opacity:0;
-  }
-</style>

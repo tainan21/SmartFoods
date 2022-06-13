@@ -36,7 +36,7 @@
                     <span class="itemsend">Total</span>
                     <span class="pricesend">R$ 13,99</span>
                </div>
-               <div class="content-wrap">
+               <form id="app" @submit="checkForm" class="content-wrap" method="post" @click="checkForm">
                     <div class="cupom">
                          <span class="item">Cupom</span>
                          <div class="content">
@@ -97,8 +97,7 @@
                          </div>
                     </div>
                     <div class="sc-bzc47e-5 jXfAwy">
-                         <input type="text" id="input-name" inputmode="text" placeholder="Como vamos te chamar" data-test="input-name" class="sc-1i2sj5a-1 dztWiI" value="tainan camargo">
-                    <!--    <div class="sc-1i2sj5a-3 hSkQsb">Informe o número do seu celular</div> --> 
+                         <input id="name" v-model="name" type="text" name="name"  inputmode="text" placeholder="Como vamos te chamar" data-test="input-name" class="sc-1i2sj5a-1 dztWiI">
                     </div>
                     <div data-done="false" data-required="true" class="sc-470djk-0 kGcfEX">
                          <div class="info">
@@ -112,22 +111,12 @@
                          </div>
                     </div>
                     <div class="sc-bzc47e-5 jXfAwy">
-
-                    <input id="input-phone" type="text" required="" inputmode="decimal" maxlength="50" data-test="input-phone" placeholder="(00) 00000-0000" class="sc-1i2sj5a-1 dztWiI" value="(14) 99141-4142"></input>
-                    <!--    <div class="sc-1i2sj5a-3 hSkQsb">Informe o número do seu celular</div> --> 
+                         <input id="tel" v-model="tel" type="number" name="tel" min="1" inputmode="decimal" maxlength="5" data-test="input-phone" placeholder="(00) 00000-0000" class="sc-1i2sj5a-1 dztWiI"></input>
                     </div>
                     <div class="sc-50d44o-1 bobdkV">O celular será utilizado para te atualizar sobre o status do seu pedido, além de te identificar para agilizar os próximos pedidos.</div>
                     <footer class="sc-widc5s-0 deepJX">
-                         <button data-test="btn-send-order" class="sc-1sjyun2-1 evbdFa">
+                         <button data-test="btn-send-order" class="sc-1sjyun2-1 evbdFa" type="submit" value="Enviar" @click="openNotification('top-left', 'danger')" >
                               <div class="sc-1sjyun2-9 hwkEjT">
-                                  <!--   <span class="loading">
-                                        <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
-                                        <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
-                                             <img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2732%27%20height=%2732%27/%3e" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
-                                        </span>
-                                      <img src="/assets/loader.svg" decoding="async" data-nimg="intrinsic" srcset="/assets/loader.svg 1x, /assets/loader.svg 2x" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                        Enviando pedido...
-                                    </span>  -->
                                    <div class="content">
                                         <span>Enviar Pedido ao WhatsApp</span>
                                         <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
@@ -137,10 +126,46 @@
                               </div>
                          </button>
                     </footer>
-               </div>
+               </form>
           </div>
      </div>
 </template>
+<script>
+export default{
+     data(){
+          return{
+               errors: [],
+               name: null,
+               tel
+          }
+     },
+     methods: {
+          checkForm: function (e) {
+               if (this.name && this.tel) {
+                    return true;
+               }
+               this.errors = [];
+               if (!this.name) {
+                    this.errors.push('O nome é obrigatório <br>');
+               }
+               if (!this.tel) {
+                    this.errors.push('O número de telefone é obrigatório<br>');
+               }
+               e.preventDefault();
+          },
+          openNotification(position = null, color) {
+               this.$vs.notification({
+               progress: 'auto',
+               color,
+               position,
+               title: this.errors,
+               text: 'Por favor, corrija esses erros'
+               })
+          },
+     }
+}
+</script>
+
 <style lang="scss">
 .evbdFa span:last-of-type {
     float: right;
