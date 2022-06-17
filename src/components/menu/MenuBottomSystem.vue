@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="" style="position: relative;">
         <CurvedBottomNavigation foreground-color='#010304' badge-color='#00FF1E' background-color='#FFFFFF' icon-color='#000000' :options="options" v-model="selected" />
     </div>
 </template>

@@ -21,7 +21,7 @@
               color: rgb(255, 255, 255);
               margin: 0 10px;
               height: 40px;
-              font-family: Poppins,sans-serif;
+              font-family: fontfamily;
          }
          &-icon{
               margin-right: 5px;
@@ -38,7 +38,7 @@
          &-Item{
               flex-direction: row;
               display: flex;
-              font-family: Poppins,sans-serif;
+              font-family: fontfamily;
          }
    }
 }

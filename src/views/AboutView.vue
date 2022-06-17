@@ -1,51 +1,77 @@
-
 <template>
-  <form id="app" @submit="checkForm" action="https://vuejs.org/" method="post" @click="checkForm">
-    <label for="name">Nome</label>
-    <input id="name" v-model="name" type="text" name="name">
-    <label for="age">Idade</label>
-    <input id="age" v-model="age" type="number" name="age"min="0">
-    <label for="movie">Filme favorito</label>
-    <input type="submit" value="Enviar" @click="openNotification('top-left', 'danger')" >
-</form>
-</template>
+<div class="container">
+<h2>Sobremesas</h2>  
+<vs-card type="1" style="margin-bottom: 500px;">
+    <template #title>
+      <h3>Milk Shake</h3>
+    </template>
+    <template #img>
+      <img src="@/assets/1.png" alt="">
+    </template>
+    <template #text>
+      <span class="">Sabor:</span>
+        <div class="center" style="display: flex; align-items: center;">
+            <vs-radio v-model="sabor" val="chocolate">
+              <template #icon></template>Chocolate
+            </vs-radio>
+            <vs-radio v-model="sabor" val="morango">
+              <template #icon></template> Morango
+            </vs-radio>
+            <vs-radio v-model="sabor" val="baunilha">
+              <template #icon></template> Baunilha
+            </vs-radio>
+        </div>
+        <span class="">Tamanho</span>
+        <div class="center" style="display: flex; align-items: center;">
+          <vs-radio v-model="pickedb" val="Pequeno">
+          <template #icon>P</template>
+        </vs-radio>
+        <vs-radio v-model="pickedb" val="Médio">
+            <template #icon>M</template>
+        </vs-radio>
+        <vs-radio v-model="pickedb" val="Grande">
+            <template #icon>G</template>
+        </vs-radio>
+        </div>
+        <p class="">Tamanho: {{ pickedb }}</p>
+        <p>Sabor: {{ sabor }}</p>
+        <div class="center con-checkbox">
+      <h3>Adiconais:</h3>
+      <vs-checkbox :val="{ price: 12, name: 'flocos' }" v-model="options">flocos {{price}}</vs-checkbox>
+      <vs-checkbox :val="{ price: 13, name: 'granulado' }" v-model="options">granulado</vs-checkbox>
+      <vs-checkbox :val="{ price: 14, name: 'pinga' }" v-model="options">pinga</vs-checkbox>
+    </div> 
+     <div class="center">
+      <vs-button block><i class='bx bxs-sales' ></i> Adicionar ao Carrinho</vs-button>
+    </div>
+    </template>
+    <template #interactions>
+        <vs-radio v-model="pickedb" val="Pequeno">
+          <template #icon>P</template>
+        </vs-radio>
+        <vs-radio v-model="pickedb" val="Médio">
+            <template #icon>M</template>
+        </vs-radio>
+        <vs-radio v-model="pickedb" val="Grande">
+            <template #icon>G</template>
+        </vs-radio>
+    </template>
+  </vs-card>
+</div>
 
+</template> 
 <script>
-export default {
-  data() {
-    return {
-      errors: [],
-      name: null,
-      age: null,
-      movie: null
-    }
-  },
-  methods:{
-    checkForm: function (e) {
-      if (this.name && this.age) {
-        return true;
-      }
-      this.errors = [];
-      if (!this.name) {
-        this.errors.push('O nome é obrigatório <br>');
-      }
-      if (!this.age) {
-        this.errors.push('A idade é obrigatória <br>');
-      }
-      if (!this.movie) {
-        this.errors.push('O filme está vazio  <br>');
-      }
-      e.preventDefault();
-    },
-    openNotification(position = null, color) {
-      this.$vs.notification({
-        progress: 'auto',
-        color,
-        position,
-        title: this.errors,
-        text: 'Por favor, corrija esses erros'
+    export default {
+      data:() => ({
+        pickedb: null,
+        picked: null,
+        sabor: null,
+        Milks: [
+          {"name": "teste", adcionais: [] }
+        ],
+        options: [
+          {"price": 14,"name": "flocos"}
+        ],
       })
-    },
-  }
-}
-</script>
+    }
+  </script>
