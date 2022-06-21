@@ -1,3 +1,102 @@
+Fixadas essas premissas, uma dúvida surge: “Construí em terreno que não é meu. Quais são os meus direitos?”.
+
+Casos como este acontecem muito com casais, que constroem em terreno de um pai, mãe, sogro ou sogra e ficam na dúvida de quais são seus direitos em caso de partilha, mas não é só nesses casos que isto ocorre.
+
+Construir em terreno alheio pode vir a ser um grande problema para aquele que constrói, uma vez que pode perder todo o investimento feito, isto porque o Código Civil, em seu artigo 1.255, prescreve que: “Aquele que semeia, planta ou edifica em terreno alheio perde, em proveito do proprietário, as sementes, plantas e construções; se procedeu de boa-fé, terá direito a indenização.”.
+
+Por sua vez, prescreve o parágrafo único do referido dispositivo de lei que “Se a construção ou a plantação exceder consideravelmente o valor do terreno, aquele que, de boa-fé, plantou ou edificou, adquirirá a propriedade do solo, mediante pagamento da indenização fixada judicialmente, se não houver acordo.”.
+
+Assim, são dois os direitos que podem ser exercid
+
+Projeto( Tasks )
+{}
+
+- Presente [{
+        - Tainan {
+            - Instalar banco de dados do Tainan - PRIORIDADE MÁXIMA SR TAI NAN - Hoje,
+            - Criar Banners do faça seu Pedido,
+            - Criar Splash da tela de carregamento inicial,
+            - Configurar favicon.ico galaxiaburguer,
+            - Tela de esqueceu sua senha,
+            - Desenvolver Validações do formulário do finalziar pedido,
+            - Desenvolver validações do crud de produtos,
+            - Desenvolver validações do crud de clientes,
+            - Criar menu bottom do faça seu pedido,
+            - Finalizar Carrinho de compras,
+            - Finalizar Pedido para o whatsapp,
+            - Finalizar layout e adicionar funções de implementação em tempo real do crud,
+            - Organizar projeto,
+            - Separar pages das views,
+            to{
+                - Tela de Crud de Adicionais,
+                - Tela de Crud de Categorias,
+                - Desenvolver tela de promoções,
+            }
+            - cabo {
+                - Desenolver layout tela de login,
+                - Desenolver layout tela de Registro,
+                - Desenvolver tela de Sobremesas/Monte seu Produto,
+            }
+        },
+        Tiago{
+            - Organizar fluxo do faça meu pedido - 18/06 - 22/06,
+            - Crud Adcinais, Tabela no banco - , 
+            - Crud Categorias, Tabela no banco - , 
+            - Filtrar os produtos através do botão de filtro, do Faça seu Pedido - ,
+            - Finalizar Crud Produtos ( alter, delete ) - ,
+            - Finalizar Pedido para o Sistema - ,
+            - Alimentar Tabela de pedido com dados do banco - ,
+            - Alimentar o gráfico com dados do banco - ,
+            - Desenvovler parte funcional tela de login - ,
+            - ASSIM QUE O SR TAINAN INSTALAR O BANCO, ENSINAR ELE A UTILIZAR O BANCO E RODAR A API, PARA NÃO FAZER CAGADINHAS NO QUE TA FEITO - PRAZO INSTANTANEO, TIPO UMA INVOCAÇÃO DO EXÓDIA.
+        },
+        TaiTi{
+            - Organizar Banco de dados,
+            - Criar a Tabela Pedido,     
+        },
+    }]
+- Futuro {
+    - Configurar dominio e subdominio,
+    - Configurar uma lógica appPrincipal e appWapper, criar uma lógica funcional para separar e implementar as duas aplicações juntas,
+    - Alimentar o Kanban com dados reais, dados do banco.
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --------------------------------------- |--TO DO--| ------------------------------------------------------------------------------------
 
  - CADA PROJETO ESCALAR DE SUA MANEIRA

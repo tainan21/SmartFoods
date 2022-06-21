@@ -33,13 +33,24 @@ const routes = [
   {
     path: '/CadastrarProdutos',
     name: 'CadastrarProdutos',
-    component: () => import('../pages/CrudProducts.vue')
+    component: () => import('../views/CrudProducts.vue')
   },
   {
     path: '/CrudProdutos',
     name: 'CrudProdutos',
     component: () => import('../views/CrudProdutos.vue')
   },
+  {
+    path: '/Adcionais',
+    name: 'CrudProdutos',
+    component: () => import('../views/crudAdcionais.vue')
+  },
+  {
+    path: '/Category',
+    name: 'CrudProdutos',
+    component: () => import('../views/crudCategory.vue')
+  },
+  
   {
     path: '/ListPedidos',
     name: 'ListPedidos',
@@ -49,6 +60,21 @@ const routes = [
     path: '/StaticsGraph',
     name: 'StaticsGraph',
     component: () => import('../views/StaticsGraph.vue')
+  },
+  {
+    path: '/ClientesList',
+    name: 'Clientes',
+    component: () => import('../views/ClientesList.vue')
+  },    
+  {
+    path: '/pedidoPrincipal',
+    name: 'pedido',
+    component: () => import('../pages/pedidoPrincipal')
+  },
+  {
+    path: '/promocoes',
+    name: 'promocoes',
+    component: () => import('../pages/pedidoPromocoes.vue')
   },
   {
     path: '/ProdutoDetalhes',
@@ -61,19 +87,19 @@ const routes = [
     component: () => import('../pages/TesteMax.vue')
   },
   {
-    path: '/ClientesList',
-    name: 'Clientes',
-    component: () => import('../pages/ClientesList.vue')
+    path: '/LoginRegister',
+    name: 'Login',
+    component: () => import('../pages/LoginRegister.vue')
   },  
+  {
+    path: '/sobremesa',
+    name: 'sobremesa',
+    component: () => import('../pages/pedidoSobremesa.vue')
+  },
   {
     path: '/MenuBottom',
     name: 'MenuBottom',
     component: () => import('../components/menu/MenuBottom.vue')
-  },  
-  {
-    path: '/faça-seu-pedido',
-    name: 'pedido',
-    component: () => import(/* webpackChunkName: "about" */ '../views/faça-seu-pedido.vue')
   }
 ]
 

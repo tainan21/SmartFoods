@@ -25,9 +25,28 @@
 				<vs-sidebar-item id="about" to="/about">
 					<template #icon><i class='bx bx-home'></i></template>Sobre
 				</vs-sidebar-item>
+				<vs-sidebar-item id="Login" to="/LoginRegister">
+					<template #icon><i class='bx bx-home'></i></template>Login
+				</vs-sidebar-item>
 				<vs-sidebar-item id="market" to="/CrudProdutos">
 					<template #icon><i class='bx bx-pie-chart-alt-2'></i></template>Cátalogo
 				</vs-sidebar-item>
+				<vs-sidebar-group>
+					<template #header>
+						<vs-sidebar-item arrow>
+							<template #icon><i class='bx bx-group'></i></template>Cadastros
+						</vs-sidebar-item>
+					</template>
+					<vs-sidebar-item id="Instagram" to="/Category">
+						<template #icon><i class='bx bxl-instagram'></i></template>Categorias
+					</vs-sidebar-item>
+					<vs-sidebar-item id="twitter" to="/Adcionais">
+						<template #icon><i class='bx bxl-twitter' ></i></template>Adcionais
+					</vs-sidebar-item>
+					<vs-sidebar-item id="twitter" to="/CrudProdutos">
+						<template #icon><i class='bx bxl-twitter' ></i></template>Cadastrar Produtos
+					</vs-sidebar-item>
+				</vs-sidebar-group>
 				<vs-sidebar-group>
 					<template #header>
 						<vs-sidebar-item arrow>
@@ -65,7 +84,7 @@
 							<template #icon><i class='bx bxs-shopping-bags' ></i></template>Faça seu Pedido
 						</vs-sidebar-item>
 					</template>
-					<vs-sidebar-item id="Pedido" to="/faça-seu-pedido">
+					<vs-sidebar-item id="Pedido" to="/pedidoPrincipal">
 						<template #icon><i class='bx bx-heart' ></i></template>Faça seu Pedido
 					</vs-sidebar-item>
 					<vs-sidebar-item id="codepen" to="/CarShop">
@@ -73,6 +92,12 @@
 					</vs-sidebar-item>
 					<vs-sidebar-item id="discord" to="/ProdutoDetalhes">
 						<template #icon ><i class='bx bxl-discord'></i></template>Produtos Detalhes
+					</vs-sidebar-item>
+					<vs-sidebar-item id="promocoes" to="/promocoes">
+						<template #icon ><i class='bx bxl-discord'></i></template>Promoções
+					</vs-sidebar-item>
+					<vs-sidebar-item id="sobremesa" to="/sobremesa">
+						<template #icon ><i class='bx bxl-discord'></i></template>Sobremesas
 					</vs-sidebar-item>
 				</vs-sidebar-group>
 				<vs-sidebar-item id="market" to="StaticsGraph">

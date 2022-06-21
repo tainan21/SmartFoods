@@ -8,6 +8,7 @@ import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import '@/pages/login'
 
 Vue.use(Vuesax, {
   colors: {
