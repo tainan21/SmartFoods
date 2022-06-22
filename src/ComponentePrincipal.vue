@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="barshow">
- 
 <!--      <TopBar /> -->
       <MenuVue />
       <router-view/>
@@ -24,6 +23,7 @@ import MenuVue from '@/components/menu/MenuVue.vue'
 import MenuVuePhone from '@/components/menu/MenuVuePhone.vue'
 import MenuBottomSystem from '@/components/menu/MenuBottomSystem.vue'
 import MenuBottomWrapper from '@/components/menu/MenuBottomWrapper.vue'
+import menuFilter from '@/components/menu/menuFilterProduct.vue'
   export default {
     components: {
       'MenuVue': MenuVue,
@@ -32,6 +32,7 @@ import MenuBottomWrapper from '@/components/menu/MenuBottomWrapper.vue'
       'TopBarPhone': TopBarPhone,
       'MenuBottomSystem': MenuBottomSystem,
       'MenuBottomWrapper': MenuBottomWrapper,
+      'menuFilter': menuFilter
     },
   }
  </script>
