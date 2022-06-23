@@ -7,11 +7,11 @@
 					</vs-button>						
 				</template>
 				<template #right>
-					<vs-button gradient style="min-width: 60px" success animation-type="scale">
+					<vs-button gradient style="min-width: 60px" success animation-type="scale" to="/Receitas">
 						<i class='bx bx-food-menu' ></i>
 						<template #animate >Receitas</template>
 					</vs-button>
-					<vs-button gradient style="min-width: 60px" danger animation-type="scale">
+					<vs-button gradient style="min-width: 60px" danger animation-type="scale" to="/MarketPlace">
 						<i class='bx bxs-shopping-bag' ></i>
 						<template #animate >Loja</template>
 					</vs-button>
@@ -35,6 +35,9 @@
 				</vs-sidebar-item>
 				<vs-sidebar-item id="about" to="/about">
 					<template #icon><i class='bx bx-home'></i></template>Sobre
+				</vs-sidebar-item>
+				<vs-sidebar-item id="guiaRapido" to="/GuiaRapido">
+					<template #icon><i class='bx bx-food-menu'></i></template>Guia Rápido
 				</vs-sidebar-item>
 				<vs-sidebar-item id="Login" to="/LoginRegister">
 					<template #icon><i class='bx bx-home'></i></template>Login

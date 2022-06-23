@@ -46,6 +46,16 @@ const routes = [
     component: () => import('../views/CrudProdutos.vue')
   },
   {
+    path: '/Receitas',
+    name: 'Receitas',
+    component: () => import('../views/ReceitasExternas.vue')
+  },
+  {
+    path: '/GuiaRapido',
+    name: 'GuiaRapido',
+    component: () => import('../views/GuiaRapido.vue')
+  },
+  {
     path: '/Adcionais',
     name: 'CrudProdutos',
     component: () => import('../views/crudAdcionais.vue')
@@ -95,6 +105,11 @@ const routes = [
     path: '/LoginRegister',
     name: 'Login',
     component: () => import('../pages/LoginRegister.vue')
+  },  
+  {
+    path: '/MarketPlace',
+    name: 'MarketPlace',
+    component: () => import('../pages/MarketPlace.vue')
   },  
   {
     path: '/sobremesa',

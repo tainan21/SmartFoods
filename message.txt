@@ -39,6 +39,7 @@ texto pich:{
                 - Desenvolver Tela de Marketplace,
                 - Desenvolver filtro Marketplace,
                 - Organizar componentes de MarketPlace,
+                - Criar tela de guiá rápido
             }
             - Finalized {
                 - Instalar banco de dados do Tainan - PRIORIDADE MÁXIMA SR TAI NAN - Hoje,

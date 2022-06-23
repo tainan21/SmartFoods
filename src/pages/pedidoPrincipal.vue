@@ -5,10 +5,10 @@
                     <!-- <img src="@/assets/product/banner.png" class="img-fluid" alt="Responsive image" style="width: 1200px; height: 300px; background-size: cover; object-fit: cover;"/> -->
                </div>
                <div class="container">
-                    <div class="Info">
+                    <!--<div class="Info">
                          <div class="Info_Desc">Endereço X</div>
                          <div class="Info_Button">Fechado</div>
-                    </div>
+                    </div> -->
                     <menuFilter />
                     <div class="Products_Box">
                               <p class="Products_Box-Title ">Lanches Tradicionais</p>

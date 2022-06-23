@@ -1,5 +1,5 @@
 <template>
     <div>
-        oi
+        Receitas Externas
     </div>
 </template>
