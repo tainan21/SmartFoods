@@ -15,30 +15,39 @@ Projeto( Tasks )
         - Tainan {
             - Criar Banners do faça seu Pedido,
             - Criar Splash da tela de carregamento inicial,
-            - Configurar favicon.ico galaxiaburguer,
             - Desenvolver tela de marketplace,
             - Garçom Virtual,
             - Desenvolver Validações do formulário do finalziar pedido,
             - Desenvolver validações do crud de produtos,
             - Desenvolver validações do crud de clientes,
-            - Criar menu bottom do faça seu pedido,
+            - Desenvolver tela de Dinheiro,
+            - Desenvolver tela de cupons,
+            - Desenvolver notificações,
             - Finalizar Carrinho de compras,
             - Finalizar Pedido para o whatsapp,
             - Finalizar layout e adicionar funções de implementação em tempo real do crud,
+            - Desenvolver Vídeo de Pich
             to{
                 - Tela de Crud de Adicionais,
                 - Tela de Crud de Categorias,
                 - Tela de esqueceu sua senha,
+                - Levantar Informações para o pich,
             }
-            - cabo {
+            - Finalized {
                 - Instalar banco de dados do Tainan - PRIORIDADE MÁXIMA SR TAI NAN - Hoje,
                 - Desenolver layout tela de login,
                 - Desenolver layout tela de Registro,
+                - Desenvolver tela de promoções,
                 - Desenvolver tela de Sobremesas/Monte seu Produto,
                 - Desenvolver Menu Filter Product,
                 - Desenvolver tela de promoções,
                 - Organizar projeto,
-            - Separar pages das views,
+                - Criar menu bottom do faça seu pedido,
+                - Separar pages das views,
+                - Configurar favicon.ico galaxiaburguer,
+                - Desenvolver Canvas Academico,
+                - Desenvolver layout de controle financeiro,
+                - Desenvolver tabela de controle financeiro,
             }
         },
         Tiago{
@@ -52,10 +61,13 @@ Projeto( Tasks )
             - Alimentar o gráfico com dados do banco - ,
             - Desenvovler parte funcional tela de login - ,
             - ASSIM QUE O SR TAINAN INSTALAR O BANCO, ENSINAR ELE A UTILIZAR O BANCO E RODAR A API, PARA NÃO FAZER CAGADINHAS NO QUE TA FEITO - PRAZO INSTANTANEO, TIPO UMA INVOCAÇÃO DO EXÓDIA.
+            to{},
+            finalized{},
         },
         TaiTi{
             - Organizar Banco de dados,
-            - Criar a Tabela Pedido,     
+            - Criar a Tabela Pedido,
+            - Desenvolver model de controle financeiro,
         },
     }]
 - Futuro {

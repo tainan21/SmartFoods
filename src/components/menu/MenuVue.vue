@@ -28,6 +28,9 @@
 				<vs-sidebar-item id="Login" to="/LoginRegister">
 					<template #icon><i class='bx bx-home'></i></template>Login
 				</vs-sidebar-item>
+				<vs-sidebar-item id="Financeiro" to="/FinanceiroControle">
+					<template #icon><i class='bx bx-home'></i></template>Finanças
+				</vs-sidebar-item>
 				<vs-sidebar-item id="market" to="/CrudProdutos">
 					<template #icon><i class='bx bx-pie-chart-alt-2'></i></template>Cátalogo
 				</vs-sidebar-item>
