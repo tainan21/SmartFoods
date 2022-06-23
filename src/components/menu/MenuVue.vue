@@ -4,17 +4,28 @@
 				<template #left>
 					<vs-button @click="activeSidebar = !activeSidebar" flat icon>
 						<i class='bx bx-menu-alt-right'></i>
-					</vs-button>
-						
+					</vs-button>						
 				</template>
 				<template #right>
-						<vs-avatar badge badge-color="success" badge-position="bottom-left" style="margin: 5px 10px;">
-								<img src="@/assets/avatar-teodoro.png" alt="">
-						</vs-avatar> 
-						<vs-avatar warn badge badge-color="success">
-								<i class='bx bxs-bell' ></i>
-								<template #badge>28</template>
-						</vs-avatar>
+					<vs-button gradient style="min-width: 60px" success animation-type="scale">
+						<i class='bx bx-food-menu' ></i>
+						<template #animate >Receitas</template>
+					</vs-button>
+					<vs-button gradient style="min-width: 60px" danger animation-type="scale">
+						<i class='bx bxs-shopping-bag' ></i>
+						<template #animate >Loja</template>
+					</vs-button>
+					<vs-button gradient style="min-width: 60px" warn animation-type="scale">
+						<i class='bx bxs-bell' ></i>
+						<template #animate >28</template>
+					</vs-button>
+<!--					<vs-avatar warn badge badge-color="success">
+						<i class='bx bxs-bell' ></i>
+						<template #badge>28</template>
+					</vs-avatar> -->
+					<vs-avatar badge badge-color="success" badge-position="bottom-left" style="margin: 5px 10px;">
+						<img src="@/assets/avatar-teodoro.png" alt="">
+					</vs-avatar> 
 				</template>
 			</vs-navbar>
 			<vs-sidebar absolute v-model="active" :open.sync="activeSidebar">
@@ -127,10 +138,8 @@
 						<vs-avatar>
 							<img src="/avatars/avatar-5.png" alt="">
 						</vs-avatar>
-
 						<vs-avatar badge-color="danger" badge-position="top-right">
 							<i class='bx bx-bell' ></i>
-
 							<template #badge>
 								28
 							</template>

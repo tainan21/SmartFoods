@@ -11,6 +11,9 @@ Assim, são dois os direitos que podem ser exercid
 Projeto( Tasks )
 {}
 
+texto pich:{
+    
+}
 - Presente [{
         - Tainan {
             - Criar Banners do faça seu Pedido,
@@ -32,6 +35,10 @@ Projeto( Tasks )
                 - Tela de Crud de Categorias,
                 - Tela de esqueceu sua senha,
                 - Levantar Informações para o pich,
+                - Desenvolver Tela de Receitas,
+                - Desenvolver Tela de Marketplace,
+                - Desenvolver filtro Marketplace,
+                - Organizar componentes de MarketPlace,
             }
             - Finalized {
                 - Instalar banco de dados do Tainan - PRIORIDADE MÁXIMA SR TAI NAN - Hoje,
@@ -48,6 +55,7 @@ Projeto( Tasks )
                 - Desenvolver Canvas Academico,
                 - Desenvolver layout de controle financeiro,
                 - Desenvolver tabela de controle financeiro,
+                - Organizar Icones topbar menu,
             }
         },
         Tiago{
