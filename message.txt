@@ -18,21 +18,19 @@ texto pich:{
         - Tainan {
             - Criar Banners do faça seu Pedido,
             - Criar Splash da tela de carregamento inicial,
-            - Desenvolver tela de marketplace,
             - Garçom Virtual,
-            - Desenvolver Validações do formulário do finalziar pedido,
             - Desenvolver validações do crud de produtos,
             - Desenvolver validações do crud de clientes,
-            - Desenvolver tela de Dinheiro,
+            - Desenvolver crud de categoria,
+            - Desenvolver Crud de Adcionais,
             - Desenvolver tela de cupons,
+            - Desenvolver Crud de cupons,
             - Desenvolver notificações,
             - Finalizar Carrinho de compras,
             - Finalizar Pedido para o whatsapp,
             - Finalizar layout e adicionar funções de implementação em tempo real do crud,
-            - Desenvolver Vídeo de Pich
             to{
                 - Tela de Crud de Adicionais,
-                - Tela de Crud de Categorias,
                 - Tela de esqueceu sua senha,
                 - Levantar Informações para o pich,
                 - Desenvolver Tela de Receitas,
@@ -49,7 +47,9 @@ texto pich:{
                 - Desenvolver tela de Sobremesas/Monte seu Produto,
                 - Desenvolver Menu Filter Product,
                 - Desenvolver tela de promoções,
+                - Desenvolver Validações do formulário do finalziar pedido,
                 - Organizar projeto,
+                - Desenvolver tela de Dinheiro,
                 - Criar menu bottom do faça seu pedido,
                 - Separar pages das views,
                 - Configurar favicon.ico galaxiaburguer,
@@ -57,6 +57,7 @@ texto pich:{
                 - Desenvolver layout de controle financeiro,
                 - Desenvolver tabela de controle financeiro,
                 - Organizar Icones topbar menu,
+                - Tela de Crud de Categorias,
             }
         },
         Tiago{

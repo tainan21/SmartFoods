@@ -29,8 +29,8 @@ const treeData = {
         {
             name: 'Lanches',
             children: [
-                { name: 'hello' },
-                { name: 'wat' },
+                { name: 'hamburguer' },
+                { name: 'calabresa' },
             ]
         },
         {
