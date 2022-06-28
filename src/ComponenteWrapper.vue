@@ -1,15 +1,17 @@
 <template>
-<div>
-  <FacaPedido />
-</div>
-
+  <div>
+    <router-view/>
+    <menuBottomWrapper />
+  </div>
 </template>
 
 <script>
-import FacaPedido from '@/views/faça-seu-pedido.vue'
+import FacaPedido from '@/pages/pedidoPrincipal.vue'
+import menuBottomWrapper from '@/components/menu/MenuBottomWrapper.vue'  
   export default {
     components: {
       'FacaPedido': FacaPedido,
+      'menuBottomWrapper': menuBottomWrapper
     },
   }
   

@@ -21,7 +21,7 @@
                                    </vs-button>
                               </div>
                     </div>
-                    <a class="Products" to="/ProdutoDetalhes">
+<!--                    <a class="Products" to="/ProdutoDetalhes">
                          <div class="Products_Text">
                               <div class="Products_Text-Title">X-tudo</div>
                               <div class="Products_Text-Description">Pão de Brioche, Hambúrguer Artesanal 120G, Queijo Prato, Bacon Crocante, Calabresa Fatiada, Ovo, Cheddar Cremoso, Catupiry, Alface, Tomate e Maionese</div>
@@ -44,7 +44,7 @@
                               <div class="Products_Text-Price">R$34.00</div>
                          </div>
                          <img src="@/assets/product/1.jpg" alt="" class="img-thumbnail rounded float-right Products_img" >
-                    </a>
+                    </a> -->
                     <a v-for="product in listProduct" :key="product.id" class="Products" to="/ProdutoDetalhes">
                     <div @click="detailProduct" class="Products_Text">
                          <div class="Products_Text-Title">{{product.name}}</div>
@@ -132,7 +132,6 @@ import menuFilter from '@/components/menu/menuFilterProduct.vue'
           justify-content: center;
           flex-direction: row;
           width: 100%;
-          margin-top: 25px;
           &-Title{
                padding: 12px;
                margin: 0;

@@ -23,7 +23,7 @@
             path: '/promocoes',
         },
         {
-            id: 4,
+            id: 3,
             icon: "fas fa-home",
             title: "Sobremesas",
             path: '/Sobremesas',
@@ -33,6 +33,12 @@
             icon: "fas fa-home",
             title: "Carrinho",
             path: '/CarShop',
+        },
+        {
+          id: 5,
+          icon: "fas fa-home",
+          title: "Carrinho",
+          path: '/CarShop',
         },
       ],
     }),
