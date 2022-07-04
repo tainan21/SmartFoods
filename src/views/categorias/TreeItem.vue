@@ -1,3 +1,19 @@
+<template>
+  <li>
+    <div :class="{ bold: isFolder }" @click="toggle" @dblclick="changeType">
+    {{ model.name }}
+      <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
+    </div>
+    <ul v-show="isOpen" v-if="isFolder">
+        <span class="item" >
+          <span v-for="model in model.children" :model="model"></span>
+        </span>
+      <!-- CORRETO - BUGADO <TreeItem class="item" v-for="model in model.children" :model="model"/>--> 
+    </ul>
+  </li>
+</template>
+
+
 <script>
 export default {
   name: 'TreeItem', // necessary for self-reference
@@ -35,15 +51,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <li>
-    <div :class="{ bold: isFolder }" @click="toggle" @dblclick="changeType">
-    {{ model.name }}
-      <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
-    </div>
-    <ul v-show="isOpen" v-if="isFolder">
-      <TreeItem class="item" v-for="model in model.children" :model="model">  </TreeItem>
-    </ul>
-  </li>
-</template>

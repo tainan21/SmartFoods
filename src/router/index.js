@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/dashboard/HomeView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,15 +10,29 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+
+  {
+    path: '/Adcionais',
+    name: 'CrudProdutos',
+    component: () => import('../views/adicionais/crudAdcionais.vue')
+  },
+
+
+
+
   {
     path: '/about',
     name: 'about',
     component: () => import('../views/AboutView.vue')
   },
+
+
+
+
   {
     path: '/FinanceiroControle',
     name: 'Controle Financeiro',
-    component: () => import('../views/FinanceiroControle.vue')
+    component: () => import('../views/financeiro/FinanceiroControle.vue')
   },
   {
     path: '/CarShop',
@@ -38,38 +52,38 @@ const routes = [
   {
     path: '/CadastrarProdutos',
     name: 'CadastrarProdutos',
-    component: () => import('../views/CrudProducts.vue')
+    component: () => import('../views/produtos/CrudProducts.vue')
   },
   {
     path: '/CrudProdutos',
     name: 'CrudProdutos',
-    component: () => import('../views/CrudProdutos.vue')
+    component: () => import('../views/produtos/CrudProdutos.vue')
   },
   {
     path: '/Receitas',
     name: 'Receitas',
-    component: () => import('../views/ReceitasExternas.vue')
+    component: () => import('../views/financeiro/ReceitasExternas.vue')
   },
   {
     path: '/GuiaRapido',
     name: 'GuiaRapido',
-    component: () => import('../views/GuiaRapido.vue')
-  },
-  {
-    path: '/Adcionais',
-    name: 'CrudProdutos',
-    component: () => import('../views/crudAdcionais.vue')
+    component: () => import('../views/dashboard/GuiaRapido.vue')
   },
   {
     path: '/Category',
     name: 'CrudProdutos',
-    component: () => import('../views/crudCategory.vue')
+    component: () => import('../views/categorias/crudCategory.vue')
+  },
+  {
+    path: '/listCategorias',
+    name: 'CrudProdutos',
+    component: () => import('../views/categorias/listCategory.vue')
   },
   
   {
     path: '/ListPedidos',
     name: 'ListPedidos',
-    component: () => import('../views/ListPedidos.vue')
+    component: () => import('../views/pedidos/ListPedidos.vue')
   },
   {
     path: '/StaticsGraph',
@@ -79,7 +93,7 @@ const routes = [
   {
     path: '/ClientesList',
     name: 'Clientes',
-    component: () => import('../views/ClientesList.vue')
+    component: () => import('../views/clientes/ClientesList.vue')
   },    
   {
     path: '/pedidoPrincipal',
