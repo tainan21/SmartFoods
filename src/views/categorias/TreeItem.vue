@@ -5,10 +5,7 @@
       <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
     </div>
     <ul v-show="isOpen" v-if="isFolder">
-        <span class="item" >
-          <span v-for="model in model.children" :model="model"></span>
-        </span>
-      <!-- CORRETO - BUGADO <TreeItem class="item" v-for="model in model.children" :model="model"/>--> 
+      <TreeItem class="item" v-for="model in model.children" :model="model"/> 
     </ul>
   </li>
 </template>
