@@ -13,7 +13,7 @@ import ComponentePrincipal from '@/ComponentePrincipal.vue'
   export default {
     components: {
       'ComponentePrincipal': ComponentePrincipal
-  //    'ComponenteWrapper': ComponenteWrapper,
+  //  'ComponenteWrapper': ComponenteWrapper,
      },
   }
   

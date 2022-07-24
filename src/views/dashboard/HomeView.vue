@@ -5,39 +5,84 @@
       <div class="cardWrapper testborder" style="margin: 0px !important;">
         <h2 class="subtitle">Novos Pedidos</h2>
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-6">
-            <div class="cardStyle cardStyleorange">
-                  <div class="cardStyleIcon cardStyleIconorange">I</div>
-                  <div class="cardStyleLegenda">Pedidos no mês</div>
-                  <div class="cardStyleNumber">+ 118</div>
-                  <div class="cardStyleSubLegenda"><b>20%</b> mais do que no ultimo</div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div class="report-card">
+                <div class="card">
+                    <div class="card-body flex flex-col">
+                        <div class="flex flex-row justify-between items-center">
+                            <div class="h6 text-indigo-700 pi pi-shopping-cart"><span class="bx bxs-bell"></span></div>
+                            <span class="rounded-full text-white badge bg-teal-400 text-xs">12%
+                              <i class='bx bxs-bell' ></i></span>
+                        </div>
+                        <div class="mt-8">
+                            <h1 class="h5 num-4">8411</h1>
+                            <p class="testec">items Vendidos</p>
+                        </div>                
+                    </div>
+                </div>
+                <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-6">
-            <div class="cardStyle cardStylepink">
-                  <div class="cardStyleIcon cardStyleIconpink">I</div>
-                  <div class="cardStyleLegenda">Pedidos no mês</div>
-                  <div class="cardStyleNumber">+ 118</div>
-                  <div class="cardStyleSubLegenda"><b>20%</b> mais do que no ultimo</div>
-
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="report-card">
+                <div class="card">
+                    <div class="card-body flex flex-col">
+                        <div class="flex flex-row justify-between items-center">
+                            <div class="h6 text-red-700 bx bxs-bell"></div>
+                            <span class="rounded-full text-white badge bg-red-400 text-xs">
+                                6%
+                                <i class="fal fa-chevron-down ml-1"></i>
+                            </span>
+                        </div>
+                        <div class="mt-8">
+                            <h1 class="h5 num-4">5443</h1>
+                            <p>Novos Pedidos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-6">
-            <div class="cardStyle cardStyleblue">
-                <div class="cardStyleIcon cardStyleIconblue">I</div>
-                <div class="cardStyleLegenda">Pedidos no mês</div>
-                <div class="cardStyleNumber">+ 118</div>
-                <div class="cardStyleSubLegenda"><b>20%</b> mais do que no ultimo</div>
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="report-card">
+                <div class="card">
+                    <div class="card-body flex flex-col">
+                        <div class="flex flex-row justify-between items-center">
+                            <div class="h6 text-green-700  bx bxs-bell"></div>
+                            <span class="rounded-full text-white badge bg-teal-400 text-xs">
+                                72%
+                                <i class="fal fa-chevron-up ml-1"></i>
+                            </span>
+                        </div>
+                        <div class="mt-8">
+                            <h1 class="h5 num-4">R$ 3.331,25</h1>
+                            <p>Lucro</p>
+                        </div>                
+                      </div>
+                </div>
+                <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-6">
-            <div class="cardStyle cardStylepurple">
-              <div class="cardStyleIcon cardStyleIconpurple">I</div>
-              <div class="cardStyleLegenda">Pedidos no mês</div>
-              <div class="cardStyleNumber">+ 118</div>
-              <div class="cardStyleSubLegenda"><b>20%</b> mais do que no ultimo</div>
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="report-card">
+                <div class="card">
+                    <div class="card-body flex flex-col">
+                        <div class="flex flex-row justify-between items-center">
+                            <div class="h6 text-red-700 bx bxs-bell"></div>
+                            <span class="rounded-full text-white badge bg-red-400 text-xs">
+                                6%
+                                <i class="fal fa-chevron-down ml-1"></i>
+                            </span>
+                        </div>
+                        <div class="mt-8">
+                            <h1 class="h5 num-4">R$ 7.331,24</h1>
+                            <p>Gastos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
             </div>
-          </div>
+          </div>          
         </div>
       </div>
     </div>
@@ -229,5 +274,50 @@ export default {
   border-radius: 3px;
   box-shadow: 0 2px 4px 0px rgb(0 0 0 / 30%);
 }
+
+
+.report-card:hover .card {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-opacity: 1;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, var(--border-opacity));  transform: scale(1.01);
+}
+
+.report-card:hover .footer {
+  padding: 0;
+  border-width: 0
+}
+
+.report-card .footer, .report-card .card {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.card {
+  border-radius: 0.25rem;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity))
+}
+
+.card .card-header {
+  border-bottom-width: 1px;
+  padding: 1.5rem
+}
+
+.card .card-body {
+  padding: 1.5rem
+}
+
+.card .card-footer {
+  border-top-width: 1px;
+  padding: 1.5rem
+}
+
 
 </style>

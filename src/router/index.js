@@ -10,7 +10,6 @@ const routes = [
     name: 'home',
     component: HomeView
   },
-
   {
     path: '/Adcionais',
     name: 'CrudProdutos',

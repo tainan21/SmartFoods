@@ -1,31 +1,38 @@
-<template>
+0<template>
     <div class="container">
-        <vs-card type="3" class="center" @click="$refs.fileC.click()" > </vs-card>
-		<h5 class="">Cadastrar um adicional</h5>
-		<div class="row">
-            <div class="col-12 m-2">
-                <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.name" placeholder="Nome do adicional">
-                    <template #icon> <i class='bx bx-lock-open-alt'></i></template>
-                </vs-input>
-            </div>  
-            <div class="col-12 m-2">
-                <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.description" placeholder="Preço">
-                    <template #icon> <i class='bx bx-lock-open-alt'></i></template>
-                </vs-input>
-            </div>
-            <div class="col-12 m-2">
-                <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.price" placeholder="Quantidade">
-                    <template #icon> <i class='bx bx-lock-open-alt'></i></template>
-                </vs-input>
-            </div>    
-            <template>
-                <div class="center">Vísivel ao cliente?<vs-checkbox v-model="option1"> {{ option1 }}</vs-checkbox>
+        <div class="center-responsive card">
+            <div class="card-body flex flex-col">
+                <vs-card type="3" class="center" @click="$refs.fileC.click()" > </vs-card>
+                <h5 class="">Cadastrar um adicional</h5>
+                <div class="row">
+                    <div class="col-12 m-2">
+                        <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.name" placeholder="Nome do adicional">
+                            <template #icon> <i class='bx bx-lock-open-alt'></i></template>
+                        </vs-input>
+                    </div>  
+                    <div class="col-12 m-2">
+                        <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.description" placeholder="Preço">
+                            <template #icon> <i class='bx bx-lock-open-alt'></i></template>
+                        </vs-input>
+                    </div>
+                    <div class="col-12 m-2">
+                        <vs-input dark  color="#7d33ff" border type="text" v-model="objProduct.price" placeholder="Quantidade">
+                            <template #icon> <i class='bx bx-lock-open-alt'></i></template>
+                        </vs-input>
+                    </div>    
+                    <div class="col-12 mt-2">
+                        <div class="flex flex-row justify-between items-center">
+                            <template>
+                                <div class="center">Vísivel ao cliente?<vs-checkbox v-model="option1"> {{ option1 }}</vs-checkbox></div>
+                            </template>
+                            <div v-for="item in products" :key="item.id" class="w-100"> 
+                                <img v-bind:src="item.image" width="300px" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </template>
-        <div v-for="item in products" :key="item.id" class="w-100"> 
-                <img v-bind:src="item.image" width="300px" alt="">
-            </div>    
-        </div>   
+            </div>   
+        </div> 
     </div>
 </template>
 <script>
@@ -77,26 +84,17 @@
                 });                                 
             })
         },
-
         setSelected(value){
             this.objProduct.category = value.id
             console.log("set aqui: ", this.objProduct)
         },
-        
-      
         addProduct(){
           try {
-            this.salvarIMG() 
-            
-           
+            this.salvarIMG()  
           } catch (error) {
-              
           }
-       
       },
-
-       handleFileUpload() {
-                    
+       handleFileUpload() {            
             for (let index = 0; index < this.$refs.fileC.files.length; index++) {
                 this.files_img.push(this.$refs.fileC.files[index])                                         
             }  
@@ -147,3 +145,10 @@
     },
     }
   </script>
+
+  <style>
+  .center-responsive{
+    margin: 10%;
+    padding: 2%;
+  }
+  </style>

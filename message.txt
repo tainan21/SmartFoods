@@ -22,7 +22,7 @@ texto pich:{
             - Desenvolver validações do crud de produtos,
             - Desenvolver validações do crud de clientes,
             - Desenvolver crud de categoria,
-            - Desenvolver Crud de Adcionais,
+            
             - Desenvolver tela de cupons,
             - Desenvolver Crud de cupons,
             - Desenvolver notificações,
@@ -30,16 +30,21 @@ texto pich:{
             - Finalizar Pedido para o whatsapp,
             - Finalizar layout e adicionar funções de implementação em tempo real do crud,
             to{
-                - Tela de Crud de Adicionais,
                 - Tela de esqueceu sua senha,
-                - Levantar Informações para o pich,
                 - Desenvolver Tela de Receitas,
                 - Desenvolver Tela de Marketplace,
                 - Desenvolver filtro Marketplace,
                 - Organizar componentes de MarketPlace,
                 - Criar tela de guiá rápido
+                - Desenvolver Lista de Adicionais
+                - Finalizar form carshop
             }
             - Finalized {
+               - Corrigir css form carshop e implementar para scss
+                - Desenvolver vídeo do pich
+                - Desenvolver Pich
+                - Levantar Informações para o pich,
+                - Desenvolver Crud de Adcionais,
                 - Instalar banco de dados do Tainan - PRIORIDADE MÁXIMA SR TAI NAN - Hoje,
                 - Desenolver layout tela de login,
                 - Desenolver layout tela de Registro,
